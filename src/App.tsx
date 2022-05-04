@@ -1,14 +1,38 @@
 import { FC } from "react";
-import Layout from "./components/Layout";
-import { ThemeProvider } from "./context/ThemeProvider";
 import "./general.css";
+import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import {
+  ThemeProvider as MUIThemeProvider,
+  createTheme,
+} from "@mui/material/styles";
+import { Box } from "@mui/material";
 
-const App: FC = () => {
+const Home: FC = () => {
+  return <div>this is home</div>;
+};
+const About: FC = () => {
+  return <Box>this is About</Box>;
+};
+const Menu: FC = () => {
   return (
-    <ThemeProvider>
-      <Layout />
-    </ThemeProvider>
+    <>
+      <Link to='/'>Home</Link>
+      <Link to='/about'>About</Link>
+    </>
   );
 };
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Box>
+        <h1>Welcome! </h1>
+        <Menu />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
+      </Box>
+    </BrowserRouter>
+  );
+}
