@@ -1,26 +1,9 @@
-import { FC } from "react";
-import "./general.css";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
-import {
-  ThemeProvider as MUIThemeProvider,
-  createTheme,
-} from "@mui/material/styles";
 import { Box } from "@mui/material";
-
-const Home: FC = () => {
-  return <div>this is home</div>;
-};
-const About: FC = () => {
-  return <Box>this is About</Box>;
-};
-const Menu: FC = () => {
-  return (
-    <>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-    </>
-  );
-};
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./general.css";
+import { Menu } from "./components/Menu";
+import { About } from "./components/About";
+import { Home } from "./components/Home";
 
 export default function App() {
   return (
