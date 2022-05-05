@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
+import Link from "@mui/material/Link";
 
 interface HeaderProps {
   sections: ReadonlyArray<{
@@ -42,7 +43,20 @@ export const Header = (props: HeaderProps) => {
         component='nav'
         variant='dense'
         sx={{ justifyContent: "space-between", overflowX: "auto" }}
-      ></Toolbar>
+      >
+        {sections.map((section) => (
+          <Link
+            color='inherit'
+            noWrap
+            key={section.title}
+            variant='body2'
+            href={section.url}
+            sx={{ p: 1, flexShrink: 0 }}
+          >
+            {section.title}
+          </Link>
+        ))}
+      </Toolbar>
     </React.Fragment>
   );
 };

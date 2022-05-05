@@ -12,16 +12,9 @@ import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
 
 const sections = [
-  { title: "Technology", url: "#" },
-  { title: "Design", url: "#" },
-  { title: "Culture", url: "#" },
-  { title: "Business", url: "#" },
-  { title: "Politics", url: "#" },
-  { title: "Opinion", url: "#" },
-  { title: "Science", url: "#" },
-  { title: "Health", url: "#" },
-  { title: "Style", url: "#" },
-  { title: "Travel", url: "#" },
+  { title: "Arrays", url: "#" },
+  { title: "Array's objects", url: "#" },
+  { title: "Components", url: "#" },
 ];
 
 const theme = createTheme();
