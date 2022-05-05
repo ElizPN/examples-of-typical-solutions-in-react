@@ -7,12 +7,14 @@ import { Home } from "./components/Home";
 import { ArrayList } from "./components/Array_list";
 import { Users } from "./components/Users";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const theme = createTheme();
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <BrowserRouter>
         <Box>
           <h1>Welcome! </h1>
