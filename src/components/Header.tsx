@@ -2,6 +2,8 @@ import * as React from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import SearchIcon from "@mui/icons-material/Search";
 
 interface HeaderProps {
   sections: ReadonlyArray<{
@@ -25,8 +27,16 @@ export const Header = (props: HeaderProps) => {
           align='center'
           noWrap
           sx={{ flex: 1 }}
-        ></Typography>
-        {title}
+        >
+          {title}
+        </Typography>
+
+        <IconButton>
+          <SearchIcon />
+        </IconButton>
+        <Button variant='outlined' size='small'>
+          Sign up
+        </Button>
       </Toolbar>
     </React.Fragment>
   );
