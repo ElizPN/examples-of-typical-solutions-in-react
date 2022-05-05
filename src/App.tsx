@@ -4,18 +4,27 @@ import "./general.css";
 import { Menu } from "./components/Menu";
 import { About } from "./components/About";
 import { Home } from "./components/Home";
+import { ArrayList } from "./components/Array_list";
+import { Users } from "./components/Users";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme();
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Box>
-        <h1>Welcome! </h1>
-        <Menu />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-        </Routes>
-      </Box>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Box>
+          <h1>Welcome! </h1>
+          <Menu />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
+        </Box>
+        <ArrayList />
+        <Users />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
