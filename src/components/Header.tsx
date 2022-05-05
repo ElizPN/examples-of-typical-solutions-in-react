@@ -38,6 +38,11 @@ export const Header = (props: HeaderProps) => {
           Sign up
         </Button>
       </Toolbar>
+      <Toolbar
+        component='nav'
+        variant='dense'
+        sx={{ justifyContent: "space-between", overflowX: "auto" }}
+      ></Toolbar>
     </React.Fragment>
   );
 };
