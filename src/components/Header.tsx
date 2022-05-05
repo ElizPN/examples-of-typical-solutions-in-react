@@ -26,6 +26,7 @@ export const Header = (props: HeaderProps) => {
           noWrap
           sx={{ flex: 1 }}
         ></Typography>
+        {title}
       </Toolbar>
     </React.Fragment>
   );
