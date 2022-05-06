@@ -12,6 +12,7 @@ import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
 import { FeaturedPost } from "./components/FeaturedPost";
 import { Main } from "./Main";
+import Footer from "./Footer";
 
 const sections = [
   { title: "Arrays", url: "#" },
@@ -70,6 +71,10 @@ export default function App() {
           <ArrayList />
           <Users />
         </Container>
+        <Footer
+          title='Footer'
+          description='Something here to give the footer a purpose!'
+        />
       </BrowserRouter>
     </ThemeProvider>
   );
