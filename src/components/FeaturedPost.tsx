@@ -4,6 +4,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import CardMedia from "@mui/material/CardMedia";
 
 interface FeaturedPostProps {
   post: {
@@ -32,6 +33,12 @@ export function FeaturedPost(props: FeaturedPostProps) {
             <Typography variant='subtitle1' color='primary'>
               Continue reading...
             </Typography>
+            <CardMedia
+              component='img'
+              sx={{ width: 160, display: { xs: "none", sm: "block" } }}
+              image={post.image}
+              alt={post.imageLabel}
+            />
           </CardContent>
         </Card>
       </CardActionArea>
