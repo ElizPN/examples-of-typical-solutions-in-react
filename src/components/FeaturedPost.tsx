@@ -2,6 +2,7 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import CardActionArea from "@mui/material/CardActionArea";
 import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 interface FeaturedPostProps {
   post: {
@@ -19,7 +20,9 @@ export function FeaturedPost(props: FeaturedPostProps) {
   return (
     <Grid item xs={12} md={6}>
       <CardActionArea component='a' href='#'>
-        <Card sx={{ display: "flex" }}></Card>
+        <Card sx={{ display: "flex" }}>
+          <CardContent sx={{ flex: 1 }}></CardContent>
+        </Card>
       </CardActionArea>
     </Grid>
   );
