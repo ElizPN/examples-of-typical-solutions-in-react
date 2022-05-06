@@ -11,6 +11,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
 import { FeaturedPost } from "./components/FeaturedPost";
+import { Main } from "./Main";
 
 const sections = [
   { title: "Arrays", url: "#" },
@@ -54,7 +55,9 @@ export default function App() {
               ))}
             </Grid>
             <Grid container spacing={5} sx={{ mt: 3 }}>
-              <Main title='From the firehose' posts={posts} />
+              <Main title='From the firehose' />
+              {/* modules posts are no
+              imported */}
             </Grid>
           </main>
 
