@@ -71,10 +71,7 @@ export default function App() {
           <ArrayList />
           <Users />
         </Container>
-        <Footer
-          title='Footer'
-          description='Something here to give the footer a purpose!'
-        />
+        <Footer title='Footer' description='Yes, this is your Footer!' />
       </BrowserRouter>
     </ThemeProvider>
   );
