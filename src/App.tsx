@@ -53,6 +53,9 @@ export default function App() {
                 <FeaturedPost key={post.title} post={post} />
               ))}
             </Grid>
+            <Grid container spacing={5} sx={{ mt: 3 }}>
+              <Main title='From the firehose' posts={posts} />
+            </Grid>
           </main>
 
           <h1>Welcome! </h1>
