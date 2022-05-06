@@ -1,13 +1,14 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
 
 interface MainProps {
-  posts: ReadonlyArray<string>;
   title: string;
 }
 
 export function Main(props: MainProps) {
-  const { posts, title } = props;
+  const { title } = props;
 
   return (
     <Grid
@@ -19,6 +20,11 @@ export function Main(props: MainProps) {
           py: 3,
         },
       }}
-    ></Grid>
+    >
+      <Typography variant='h6' gutterBottom>
+        {title}
+      </Typography>
+      <Divider />
+    </Grid>
   );
 }
