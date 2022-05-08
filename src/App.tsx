@@ -12,13 +12,15 @@ import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
 import { FeaturedPost } from "./components/FeaturedPost";
 import { Main } from "./Main";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
+import { Title } from "./Title";
 
 const sections = [
   { title: "Arrays", url: "#" },
   { title: "Array's objects", url: "#" },
   { title: "Components", url: "#" },
 ];
+
 // const mainFeaturedPost
 
 const featuredPosts = [
@@ -64,6 +66,7 @@ export default function App() {
 
           <h1>Welcome! </h1>
           <Menu />
+          <Title />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
