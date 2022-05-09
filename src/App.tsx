@@ -11,9 +11,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
 import { FeaturedPost } from "./components/FeaturedPost";
-import { Main } from "./Main";
+import { Main } from "./components/Main";
 import Footer from "./components/Footer";
-import { Title } from "./Title";
+import { Title } from "./components/Title";
 
 const sections = [
   { title: "Arrays", url: "#" },
