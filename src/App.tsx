@@ -13,7 +13,7 @@ import { Header } from "./components/Header";
 import { FeaturedPost } from "./components/FeaturedPost";
 import { Main } from "./components/Main";
 import Footer from "./components/Footer";
-import { Page } from "./components/Page";
+import { PageRouter } from "./components/PageRouter";
 
 const sections = [
   { title: "Arrays", url: "#" },
@@ -66,13 +66,11 @@ export default function App() {
 
           <h1>Welcome! </h1>
           <Menu />
-          <Page />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
+            <Route path='/states' element={<PageRouter />} />
           </Routes>
-          <ArrayList />
-          <Users />
         </Container>
         <Footer title='Footer' description='Yes, this is your Footer!' />
       </BrowserRouter>
