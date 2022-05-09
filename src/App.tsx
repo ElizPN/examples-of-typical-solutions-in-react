@@ -13,8 +13,7 @@ import { Header } from "./components/Header";
 import { FeaturedPost } from "./components/FeaturedPost";
 import { Main } from "./components/Main";
 import Footer from "./components/Footer";
-import { Title } from "./components/Title";
-import { Body } from "./components/Body";
+import { Page } from "./components/Page";
 
 const sections = [
   { title: "Arrays", url: "#" },
@@ -67,8 +66,7 @@ export default function App() {
 
           <h1>Welcome! </h1>
           <Menu />
-          <Title />
-          <Body />
+          <Page />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
