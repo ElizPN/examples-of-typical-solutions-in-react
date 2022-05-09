@@ -14,6 +14,7 @@ import { FeaturedPost } from "./components/FeaturedPost";
 import { Main } from "./components/Main";
 import Footer from "./components/Footer";
 import { Title } from "./components/Title";
+import { Body } from "./components/Body";
 
 const sections = [
   { title: "Arrays", url: "#" },
@@ -67,6 +68,7 @@ export default function App() {
           <h1>Welcome! </h1>
           <Menu />
           <Title />
+          <Body />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
