@@ -5,19 +5,15 @@ import { Counter } from "./Counter";
 
 import { Title } from "./Title";
 
-var contentful = require("contentful");
-
-const client = contentful.createClient({
-  space: "a4alnltpsauh",
-  accessToken: "n_8u2e0aBdG_U7V2o6u1ClYynSy1MZeblGnrCXOuWhQ",
-});
-
 interface PageProps {
   entryId: string;
+  client: {
+    getEntry: (entryId: string) => Promise<void>;
+  };
 }
 
 export function Page(props: PageProps) {
-  const { entryId } = props;
+  const { entryId, client } = props;
 
   const [titleState, setTitleState] = useState("");
   const [bodyState, setBodyState] = useState("");
