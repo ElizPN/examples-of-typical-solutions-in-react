@@ -3,18 +3,18 @@ import { Body } from "./Body";
 import { Title } from "./Title";
 
 interface PageProps {
-  TemplatePage: React.FC;
+  ComponentExampe: React.FC;
   title: string;
   body: string;
 }
 
 export function Page(props: PageProps) {
-  const { TemplatePage, title, body } = props;
+  const { ComponentExampe, title, body } = props;
 
   return (
     <Box>
       <Title title={title} />
-      <TemplatePage />
+      <ComponentExampe />
       <Body body={body} />
     </Box>
   );
