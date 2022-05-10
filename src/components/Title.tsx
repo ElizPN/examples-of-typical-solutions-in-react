@@ -1,14 +1,9 @@
-// interface ClientProps {
-//   space: string;
-//   accessToken: string;
-// }
-
 interface TitleProps {
-  titleState: string;
+  title: string;
 }
 
 export function Title(props: TitleProps) {
-  const { titleState } = props;
+  const { title } = props; // title : title
 
-  return <h2>{titleState}</h2>;
+  return <h2>{title}</h2>;
 }

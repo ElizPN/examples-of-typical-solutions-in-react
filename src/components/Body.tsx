@@ -1,9 +1,9 @@
 interface BodyProps {
-  bodyState: string;
+  body: string;
 }
 
 export function Body(props: BodyProps) {
-  const { bodyState } = props;
+  const { body } = props;
 
-  return <p>{bodyState}</p>;
+  return <p>{body}</p>;
 }

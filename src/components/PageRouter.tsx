@@ -1,3 +1,6 @@
+import Box from "@mui/material/Box";
+import { useState } from "react";
+import { Counter } from "./Counter";
 import { Page } from "./Page";
 
 var contentful = require("contentful");
@@ -9,5 +12,17 @@ export function PageRouter() {
   });
   const entryId = "4KzAcNlgeLWb7WynZwVXDl";
 
-  return <Page entryId={entryId} client={client} />;
+  const [titleState, setTitleState] = useState("");
+  const [bodyState, setBodyState] = useState("");
+
+  client.getEntry(entryId).then((entry: any) => {
+    setTitleState(entry.fields.title);
+    setBodyState(entry.fields.body.content[0].content[0].value);
+  });
+
+  return (
+    <Box>
+      <Page TemplatePage={Counter} title={titleState} body={bodyState} />
+    </Box>
+  );
 }
