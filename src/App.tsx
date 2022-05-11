@@ -12,6 +12,7 @@ import { FeaturedPost } from "./components/FeaturedPost";
 import { Main } from "./components/Main";
 import Footer from "./components/Footer";
 import { PageRouter } from "./components/PageRouter";
+import { ChapterRouter } from "./components/ChapterRouter";
 
 const sections = [
   { title: "Arrays", url: "#" },
@@ -68,6 +69,7 @@ export default function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/states/counter' element={<PageRouter />} />
+            <Route path='/states' element={<ChapterRouter />} />
           </Routes>
         </Container>
         <Footer title='Footer' description='Yes, this is your Footer!' />
