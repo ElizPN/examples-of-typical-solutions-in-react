@@ -1,16 +1,10 @@
 import Box from "@mui/material/Box";
 import React, { useState } from "react";
 import { contentfulConfig } from "../config/contentfulConfig";
-import { componentsMap } from "./componentsMap";
-import { Counter } from "./Counter";
+import { componentsMap } from "../example_components/componentsMap";
 import { Page } from "./Page";
 
 var contentful = require("contentful");
-
-const configPage = {
-  entryId: "4KzAcNlgeLWb7WynZwVXDl",
-  componentExample: Counter,
-};
 
 export function PageRouter() {
   const client = contentful.createClient(contentfulConfig);

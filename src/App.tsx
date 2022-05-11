@@ -4,8 +4,6 @@ import "./general.css";
 import { Menu } from "./components/Menu";
 import { About } from "./components/About";
 import { Home } from "./components/Home";
-import { ArrayList } from "./components/Array_list";
-import { Users } from "./components/Users";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
