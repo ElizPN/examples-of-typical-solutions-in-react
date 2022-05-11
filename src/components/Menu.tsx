@@ -13,7 +13,7 @@ export const Menu: FC = () => {
         About
       </Button>
 
-      <Button to='/states' variant='outlined' component={Link}>
+      <Button to='/states/counter' variant='outlined' component={Link}>
         States
       </Button>
     </>

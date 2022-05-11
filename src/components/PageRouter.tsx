@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { contentfulConfig } from "../config/contentfulConfig";
 import { componentsMap } from "../example_components/componentsMap";
 import { Page } from "./Page";
+import { useLocation } from "react-router-dom";
 
 var contentful = require("contentful");
 
@@ -14,10 +15,13 @@ export function PageRouter() {
   const [ComponentNameState, setComponenetNameState] = useState("");
 
   const component = componentsMap[ComponentNameState];
+  const location = useLocation();
+
+  const slug = location.pathname;
 
   client
     .getEntries({
-      "fields.slug": "states-counter",
+      "fields.slug": slug,
       content_type: "page",
     })
     .then(function (entries: any) {
@@ -34,6 +38,7 @@ export function PageRouter() {
 
   return (
     <Box>
+      Path is: {location.pathname}
       <Page ComponentExampe={component} title={titleState} body={bodyState} />
     </Box>
   );
