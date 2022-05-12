@@ -1,8 +1,13 @@
 import Box from "@mui/material/Box";
 import { contentfulConfig } from "../config/contentfulConfig";
 import { useLocation } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 var contentful = require("contentful");
+
+type ListLinks = Record<"title" | "url", string>[];
 
 export function ChapterRouter() {
   const client = contentful.createClient(contentfulConfig);
@@ -11,14 +16,39 @@ export function ChapterRouter() {
 
   const chapter = location.pathname;
 
+  const [arrayLinksState, setArraylinksState] = useState<ListLinks>([]);
+
   client
     .getEntries({
       "fields.chapter": chapter,
       content_type: "page",
     })
     .then(function (entries: any) {
-      entries.items.forEach(function (entry: any) {});
+      const arrayList: ListLinks = [];
+
+      entries.items.map((elem: { fields: { title: string; slug: string } }) => {
+        console.log(elem.fields);
+        const link = {
+          title: elem.fields.title,
+          url: elem.fields.slug,
+        };
+        arrayList.push(link);
+      });
+
+      setArraylinksState(arrayList);
     });
 
-  return <Box>This is Chapter page</Box>;
+  if (!arrayLinksState.length) {
+    return <p>Loading...</p>;
+  }
+
+  const arrayLinksRender: any = arrayLinksState.map((elem) => {
+    return (
+      <Button to={elem.url} variant='outlined' component={Link}>
+        {elem.title}
+      </Button>
+    );
+  });
+
+  return <Box>{arrayLinksRender}</Box>;
 }
