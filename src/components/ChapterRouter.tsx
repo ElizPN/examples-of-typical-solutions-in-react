@@ -27,7 +27,6 @@ export function ChapterRouter() {
       const arrayList: ListLinks = [];
 
       entries.items.map((elem: { fields: { title: string; slug: string } }) => {
-        console.log(elem.fields);
         const link = {
           title: elem.fields.title,
           url: elem.fields.slug,
