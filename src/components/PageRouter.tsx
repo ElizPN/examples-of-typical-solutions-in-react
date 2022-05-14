@@ -18,6 +18,7 @@ export function PageRouter() {
   const location = useLocation();
 
   const slug = location.pathname;
+  console.log(slug);
 
   useEffect(() => {
     client
@@ -32,7 +33,7 @@ export function PageRouter() {
           setComponenetNameState(entry.fields.nameComponent);
         });
       });
-  }, []);
+  }, [slug]);
 
   if (!component) {
     return <p>Loading...</p>;
