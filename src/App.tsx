@@ -8,17 +8,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
-import { FeaturedPost } from "./components/FeaturedPost";
 import { Main } from "./components/Main";
 import Footer from "./components/Footer";
 import { PageRouter } from "./components/PageRouter";
 import { ChapterRouter } from "./components/ChapterRouter";
-
-const sections = [
-  { title: "Arrays", url: "#" },
-  { title: "Array's objects", url: "#" },
-  { title: "Components", url: "#" },
-];
 
 // const mainFeaturedPost
 
@@ -32,7 +25,8 @@ export default function App() {
       <CssBaseline />
       <BrowserRouter>
         <Container maxWidth='lg'>
-          <Header title='Blog' sections={sections} />
+          <Header title='Blog' />
+          <Menu />
           <main>
             <Grid container spacing={5} sx={{ mt: 3 }}>
               <Main title='From the firehose' />
@@ -40,15 +34,19 @@ export default function App() {
           </main>
 
           <h1>Welcome! </h1>
-          <Menu />
+
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/states/counter' element={<PageRouter />} />
+            <Route
+              path='/states/working-with-selects'
+              element={<PageRouter />}
+            />
             <Route path='/states' element={<ChapterRouter />} />
           </Routes>
         </Container>
-        <Footer title='Footer' description='Yes, this is your Footer!' />
+        <Footer title='Footer' description='Yes, this is my Footer!' />
       </BrowserRouter>
     </ThemeProvider>
   );
