@@ -51,15 +51,8 @@ export default function App() {
         <Container maxWidth='lg'>
           <Header title='Blog' sections={sections} />
           <main>
-            <Grid container spacing={4}>
-              {featuredPosts.map((post) => (
-                <FeaturedPost key={post.title} post={post} />
-              ))}
-            </Grid>
             <Grid container spacing={5} sx={{ mt: 3 }}>
               <Main title='From the firehose' />
-              {/* modules posts are no
-              imported */}
             </Grid>
           </main>
 
