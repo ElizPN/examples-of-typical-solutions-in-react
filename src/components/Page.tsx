@@ -1,6 +1,4 @@
 import Box from "@mui/material/Box";
-import { Body } from "./Body";
-import { Title } from "./Title";
 
 interface PageProps {
   ComponentExampe: React.FC;
@@ -13,9 +11,9 @@ export function Page(props: PageProps) {
 
   return (
     <Box>
-      <Title title={title} />
+      <h2>{title}</h2>
       <ComponentExampe />
-      <Body body={body} />
+      {body}
     </Box>
   );
 }

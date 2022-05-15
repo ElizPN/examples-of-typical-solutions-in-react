@@ -43,6 +43,11 @@ export default function App() {
               path='/states/working-with-selects'
               element={<PageRouter />}
             />
+            <Route
+              path='/arrays/array-reactivity-in-react'
+              element={<PageRouter />}
+            />
+
             <Route path='/states' element={<ChapterRouter />} />
             <Route path='/arrays' element={<ChapterRouter />} />
           </Routes>
