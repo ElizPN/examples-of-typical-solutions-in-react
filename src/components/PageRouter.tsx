@@ -4,6 +4,7 @@ import { contentfulConfig } from "../config/contentfulConfig";
 import { componentsMap } from "../example_components/componentsMap";
 import { Page } from "./Page";
 import { useLocation } from "react-router-dom";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 var contentful = require("contentful");
 
@@ -18,7 +19,6 @@ export function PageRouter() {
   const location = useLocation();
 
   const slug = location.pathname;
-  console.log(slug);
 
   useEffect(() => {
     client
@@ -29,7 +29,10 @@ export function PageRouter() {
       .then(function (entries: any) {
         entries.items.forEach(function (entry: any) {
           setTitleState(entry.fields.title);
-          setBodyState(entry.fields.body.content[0].content[0].value);
+
+          const bodyRender: any = documentToReactComponents(entry.fields.body);
+          setBodyState(bodyRender);
+
           setComponenetNameState(entry.fields.nameComponent);
         });
       });
@@ -38,6 +41,8 @@ export function PageRouter() {
   if (!component) {
     return <p>Loading...</p>;
   }
+
+  console.log(bodyState);
 
   return (
     <Box>
