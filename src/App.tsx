@@ -44,6 +44,7 @@ export default function App() {
               element={<PageRouter />}
             />
             <Route path='/states' element={<ChapterRouter />} />
+            <Route path='/arrays' element={<ChapterRouter />} />
           </Routes>
         </Container>
         <Footer title='Footer' description='Yes, this is my Footer!' />
