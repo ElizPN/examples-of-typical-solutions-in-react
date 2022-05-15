@@ -16,6 +16,10 @@ export const Menu: FC = () => {
       <Button to='/states' variant='outlined' component={Link}>
         States
       </Button>
+
+      <Button to='/arrays' variant='outlined' component={Link}>
+        Arrays
+      </Button>
     </>
   );
 };
