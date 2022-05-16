@@ -39,7 +39,7 @@ export function ChapterRouter() {
 
         setArraylinksState(arrayList);
       });
-  }, []);
+  }, [chapter]);
 
   if (!arrayLinksState.length) {
     return <p>Loading...</p>;
