@@ -13,10 +13,6 @@ import Footer from "./components/Footer";
 import { PageRouter } from "./components/PageRouter";
 import { ChapterRouter } from "./components/ChapterRouter";
 
-// const mainFeaturedPost
-
-// const featuredPosts
-
 const theme = createTheme();
 
 export default function App() {
@@ -38,18 +34,9 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/states/counter' element={<PageRouter />} />
-            <Route
-              path='/states/working-with-selects'
-              element={<PageRouter />}
-            />
-            <Route
-              path='/arrays/array-reactivity-in-react'
-              element={<PageRouter />}
-            />
-
-            <Route path='/states' element={<ChapterRouter />} />
-            <Route path='/arrays' element={<ChapterRouter />} />
+            //entries - particular pages;
+            <Route path='/entries/:chapter/:page' element={<PageRouter />} />
+            <Route path='/category/:chapter' element={<ChapterRouter />} />
           </Routes>
         </Container>
         <Footer title='Footer' description='Yes, this is my Footer!' />

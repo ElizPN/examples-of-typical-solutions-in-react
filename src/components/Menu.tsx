@@ -13,11 +13,11 @@ export const Menu: FC = () => {
         About
       </Button>
 
-      <Button to='/states' variant='outlined' component={Link}>
+      <Button to='/category/states' variant='outlined' component={Link}>
         States
       </Button>
 
-      <Button to='/arrays' variant='outlined' component={Link}>
+      <Button to='/category/arrays' variant='outlined' component={Link}>
         Arrays
       </Button>
     </>
