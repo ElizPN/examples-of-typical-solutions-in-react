@@ -34,7 +34,6 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
-            //entries - particular pages;
             <Route path='/entries/:chapter/:page' element={<PageRouter />} />
             <Route path='/category/:chapter' element={<ChapterRouter />} />
           </Routes>
