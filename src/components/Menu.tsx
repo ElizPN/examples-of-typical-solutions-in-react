@@ -1,25 +1,53 @@
 import { Button } from "@mui/material";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Link } from "react-router-dom";
+import { indexof } from "stylis";
+import { contentfulConfig } from "../config/contentfulConfig";
+
+var contentful = require("contentful");
+
+const arrayMenu = [
+  {
+    text: "Home",
+    url: " /",
+  },
+  {
+    text: "About",
+    url: "/about",
+  },
+  {
+    text: "States",
+    url: "/category/states",
+  },
+  {
+    text: "Arrays",
+    url: "/category/arrays",
+  },
+];
 
 export const Menu: FC = () => {
-  return (
-    <>
-      <Button to='/' variant='outlined' component={Link}>
-        Home
-      </Button>
+  // const client = contentful.createClient(contentfulConfig);
 
-      <Button to='/about' variant='outlined' component={Link}>
-        About
-      </Button>
+  // client
+  //   .getEntries({
+  //     // "fields.menuChapter": "About",
+  //     content_type: "menu",
+  //   })
+  //   .then(function (entries: any) {
+  //     entries.items.forEach(function (entry: any) {
+  //       console.log(entry.fields);
+  //     });
+  //   });
 
-      <Button to='/category/states' variant='outlined' component={Link}>
-        States
-      </Button>
+  const [arrayMenuState, setArrayMenuState] = useState(arrayMenu);
 
-      <Button to='/category/arrays' variant='outlined' component={Link}>
-        Arrays
+  const arrayMenuRender = arrayMenuState.map((elem, index) => {
+    return (
+      <Button key={index} to={elem.url} variant='outlined' component={Link}>
+        {elem.text}
       </Button>
-    </>
-  );
+    );
+  });
+
+  return <>{arrayMenuRender}</>;
 };
