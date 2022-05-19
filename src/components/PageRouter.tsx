@@ -20,6 +20,7 @@ export function PageRouter() {
   const [ComponentNameState, setComponenetNameState] = useState("");
 
   const component = componentsMap[ComponentNameState];
+
   const location = useLocation();
 
   const slug = location.pathname;
