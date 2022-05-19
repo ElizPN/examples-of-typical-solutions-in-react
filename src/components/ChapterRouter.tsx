@@ -37,7 +37,7 @@ export function ChapterRouter() {
               url: elem.fields.slug,
               body: body && body.length > 0 ? body[0] : "",
             };
-            // arrayList.push(article);
+
             return article;
           }
         );
