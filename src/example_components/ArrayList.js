@@ -3,9 +3,9 @@ import { useState } from "react";
 const arr = ["a", "b", "c", "d", "e"];
 
 export function ArrayList() {
-  const [notes, setNotes] = useState(arr);
+  const [arrayNotes, setArrayNotes] = useState(arr);
 
-  const arrayList = notes.map(function (item, index) {
+  const arrayList = arrayNotes.map(function (item, index) {
     return <li key={index}>{item}</li>;
   });
 
