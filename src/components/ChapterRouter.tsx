@@ -29,9 +29,7 @@ export function ChapterRouter() {
         content_type: "page",
       })
       .then(function (entries: any) {
-        const arrayList: ListLinks = [];
-
-        entries.items.map(
+        const arrayList: ListLinks = entries.items.map(
           (elem: { fields: { title: string; slug: string; body: any } }) => {
             const body = documentToReactComponents(elem.fields.body) as any;
             const article = {
@@ -39,7 +37,8 @@ export function ChapterRouter() {
               url: elem.fields.slug,
               body: body && body.length > 0 ? body[0] : "",
             };
-            arrayList.push(article);
+            // arrayList.push(article);
+            return article;
           }
         );
 
