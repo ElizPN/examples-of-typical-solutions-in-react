@@ -6,14 +6,13 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import createTheme from "@mui/material/styles/createTheme";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 
 var contentful = require("contentful");
 
 type ListLinks = Record<"title" | "url" | "body", any>[];
 
-// const theme = createTheme();
-// theme.spacing(9);
-// console.log(theme.spacing(9));
+const theme = createTheme();
 
 export function ChapterRouter() {
   const client = contentful.createClient(contentfulConfig);
@@ -21,7 +20,6 @@ export function ChapterRouter() {
   const location = useLocation();
 
   const chapter = location.pathname;
-
   const [arrayLinksState, setArraylinksState] = useState<ListLinks>([]);
 
   useEffect(() => {
@@ -64,5 +62,5 @@ export function ChapterRouter() {
     );
   });
 
-  return <Box>{arrayLinksRender}</Box>;
+  return <ThemeProvider theme={theme}>{arrayLinksRender} </ThemeProvider>;
 }
