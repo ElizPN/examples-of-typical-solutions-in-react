@@ -33,10 +33,6 @@ export const Menu: FC = () => {
       });
   }, []);
 
-  // if (!arrayMenuState.length) {
-  //   return <p>Loading...</p>;
-  // }
-
   const arrayMenuRender = arrayMenuState.map((elem, index) => {
     return (
       <Button key={index} to={elem.url} variant='outlined' component={Link}>
