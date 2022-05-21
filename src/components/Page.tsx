@@ -1,9 +1,9 @@
 import Box from "@mui/material/Box";
 
 interface PageProps {
-  ComponentExampe: React.FC;
   title: string;
   body: string;
+  ComponentExampe?: React.FC;
 }
 
 export function Page(props: PageProps) {
@@ -12,8 +12,9 @@ export function Page(props: PageProps) {
   return (
     <Box>
       <h2>{title}</h2>
-      <ComponentExampe />
       {body}
+      {/* if component exists, we use it */}
+      {ComponentExampe && <ComponentExampe />}
     </Box>
   );
 }
