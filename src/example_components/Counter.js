@@ -35,8 +35,8 @@ export function Counter() {
       >
         Count Product
       </button>
-      <p>{result1}</p>
-      <p>{result2}</p>
+      <p>Sum: {result1}</p>
+      <p>Prod: {result2}</p>
     </div>
   );
 }
