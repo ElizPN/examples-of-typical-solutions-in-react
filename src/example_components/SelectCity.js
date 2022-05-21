@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 
+const cities = ["Stockholm", "Malmo", "Gnesta", "Gothenburg"];
+
 export function SelectCity() {
-  let [value, setValue] = useState("");
+  const [value, setValue] = useState("");
+
+  const optionCities = cities.map((city, index) => {
+    return <option key={index}>{city}</option>;
+  });
 
   return (
     <div>
@@ -11,10 +17,7 @@ export function SelectCity() {
           setValue(event.target.value);
         }}
       >
-        <option>Stockholm</option>
-        <option>Malmo</option>
-        <option>Gnesta</option>
-        <option>Gothenburg</option>
+        {optionCities}
       </select>
 
       <p> Your choice: {value}</p>
