@@ -88,13 +88,12 @@ export function PageRouter() {
       });
   }, [slug]);
 
-  if (!component) {
-    return <p>Loading...</p>;
-  }
+  //   if (!component) {
+  //     return <p>Loading...</p>;
+  //   }
 
   return (
     <Box>
-      Path is: {location.pathname}
       <Page ComponentExampe={component} title={titleState} body={bodyState} />
     </Box>
   );
