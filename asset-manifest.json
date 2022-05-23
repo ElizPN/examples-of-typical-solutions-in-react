@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react-typical-challenges/static/css/main.41cb684f.chunk.css",
-    "main.js": "/react-typical-challenges/static/js/main.c1b04bb5.chunk.js",
-    "main.js.map": "/react-typical-challenges/static/js/main.c1b04bb5.chunk.js.map",
+    "main.js": "/react-typical-challenges/static/js/main.f8821d14.chunk.js",
+    "main.js.map": "/react-typical-challenges/static/js/main.f8821d14.chunk.js.map",
     "runtime-main.js": "/react-typical-challenges/static/js/runtime-main.d8908f84.js",
     "runtime-main.js.map": "/react-typical-challenges/static/js/runtime-main.d8908f84.js.map",
-    "static/js/2.b3dfc6c4.chunk.js": "/react-typical-challenges/static/js/2.b3dfc6c4.chunk.js",
-    "static/js/2.b3dfc6c4.chunk.js.map": "/react-typical-challenges/static/js/2.b3dfc6c4.chunk.js.map",
+    "static/js/2.5d6de05d.chunk.js": "/react-typical-challenges/static/js/2.5d6de05d.chunk.js",
+    "static/js/2.5d6de05d.chunk.js.map": "/react-typical-challenges/static/js/2.5d6de05d.chunk.js.map",
     "index.html": "/react-typical-challenges/index.html",
     "static/css/main.41cb684f.chunk.css.map": "/react-typical-challenges/static/css/main.41cb684f.chunk.css.map",
-    "static/js/2.b3dfc6c4.chunk.js.LICENSE.txt": "/react-typical-challenges/static/js/2.b3dfc6c4.chunk.js.LICENSE.txt"
+    "static/js/2.5d6de05d.chunk.js.LICENSE.txt": "/react-typical-challenges/static/js/2.5d6de05d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d8908f84.js",
-    "static/js/2.b3dfc6c4.chunk.js",
+    "static/js/2.5d6de05d.chunk.js",
     "static/css/main.41cb684f.chunk.css",
-    "static/js/main.c1b04bb5.chunk.js"
+    "static/js/main.f8821d14.chunk.js"
   ]
 }
