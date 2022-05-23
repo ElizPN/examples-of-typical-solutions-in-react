@@ -38,10 +38,7 @@ export default function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/entries/:chapter/:page' element={<PageRouter />} />
-            <Route
-              path='elizpn.github.io/react-typical-challenges/category/:chapter'
-              element={<ChapterRouter />}
-            />
+            <Route path='/category/:chapter' element={<ChapterRouter />} />
           </Routes>
         </Container>
         <Footer title='Footer' description='Yes, this is my Footer!' />
