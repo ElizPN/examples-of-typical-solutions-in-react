@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import "./general.css";
 import { Menu } from "./components/Menu";
 import { About } from "./components/About";
@@ -22,7 +22,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Container maxWidth='lg'>
           <Header title='Blog' />
           <Menu />
@@ -42,7 +42,7 @@ export default function App() {
           </Routes>
         </Container>
         <Footer title='Footer' description='Yes, this is my Footer!' />
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
