@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./general.css";
 import { Menu } from "./components/Menu";
 import { About } from "./components/About";
@@ -17,12 +17,13 @@ const theme = createTheme();
 
 const customData: any = require("../package.json");
 console.log(customData.homepage);
+console.log(process.env.PUBLIC_URL);
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Container maxWidth='lg'>
           <Header title='Blog' />
           <Menu />
