@@ -2,11 +2,12 @@ import Box from "@mui/material/Box";
 import { contentfulConfig } from "../config/contentfulConfig";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import createTheme from "@mui/material/styles/createTheme";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import Button from "@mui/material/Button";
 
 var contentful = require("contentful");
 
@@ -52,11 +53,11 @@ export function ChapterRouter() {
 
   const arrayLinksRender: any = arrayLinksState.map((elem, index) => {
     return (
-      <Stack spacing={2} key={index}>
-        <Link href={elem.url} underline='hover'>
+      <Stack mb={5} spacing={0.5} key={index}>
+        <Button to={elem.url} variant='outlined' component={Link}>
           {elem.title}
-        </Link>
-        {elem.body}
+        </Button>
+        <Box>{elem.body}</Box>
       </Stack>
     );
   });

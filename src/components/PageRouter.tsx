@@ -88,10 +88,6 @@ export function PageRouter() {
       });
   }, [slug]);
 
-  //   if (!component) {
-  //     return <p>Loading...</p>;
-  //   }
-
   return (
     <Box>
       <Page ComponentExampe={component} title={titleState} body={bodyState} />
