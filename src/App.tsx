@@ -15,6 +15,9 @@ import { ChapterRouter } from "./components/ChapterRouter";
 
 const theme = createTheme();
 
+const customData: any = require("../package.json");
+console.log(customData.homepage);
+
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -35,7 +38,10 @@ export default function App() {
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/entries/:chapter/:page' element={<PageRouter />} />
-            <Route path='/category/:chapter' element={<ChapterRouter />} />
+            <Route
+              path='elizpn.github.io/react-typical-challenges/category/:chapter'
+              element={<ChapterRouter />}
+            />
           </Routes>
         </Container>
         <Footer title='Footer' description='Yes, this is my Footer!' />
