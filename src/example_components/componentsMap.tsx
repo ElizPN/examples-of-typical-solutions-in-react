@@ -1,3 +1,4 @@
+import { AddElementFromInput } from "./AddElementFromInput";
 import { ArrayList } from "./ArrayList";
 import { Counter } from "./Counter";
 import { DeleteElementByIndex } from "./DeleteElementByIndex";
@@ -10,3 +11,4 @@ componentsMap["counter"] = Counter;
 componentsMap["select_city"] = SelectCity;
 componentsMap["increase_array"] = IncreaseArray;
 componentsMap["delete_element_by_index"] = DeleteElementByIndex;
+componentsMap["add_element_from_input"] = AddElementFromInput;
