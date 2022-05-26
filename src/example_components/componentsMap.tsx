@@ -6,8 +6,10 @@ import { Counter } from "./Counter";
 import { DelElemFromObjetsArray } from "./DelElemFromObjetsArray";
 import { DeleteElementByIndex } from "./DeleteElementByIndex";
 import { EditArray } from "./EditArray";
+import { EditObjectArray } from "./EditObjectArray";
 import { FormToAddElements } from "./FormToAddElements";
 import { GenericFormToModifyArray } from "./GenericFormToModifyArray";
+import { GenerFormToModifyObjectsArray } from "./GenericFormToModifyObjecsArray";
 import { IncreaseArray } from "./IncreaseArray";
 import { SelectCity } from "./SelectCity";
 
@@ -24,3 +26,6 @@ componentsMap["generic_form_array"] = GenericFormToModifyArray;
 componentsMap["del_elem_from_objects_array"] = DelElemFromObjetsArray;
 componentsMap["change_element_in_objects_array"] = ChangeElemInObjectsArray;
 componentsMap["form_to_add_elements"] = FormToAddElements;
+componentsMap["edit_objects_array"] = EditObjectArray;
+componentsMap["generic_form_to_modify_objecs_array"] =
+  GenerFormToModifyObjectsArray;
