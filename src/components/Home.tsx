@@ -1,5 +1,9 @@
 import { FC } from "react";
 
 export const Home: FC = () => {
-  return <div>this is home</div>;
+  return (
+    <div>
+      <h1>Welcome to home page! </h1>
+    </div>
+  );
 };

@@ -33,8 +33,6 @@ export default function App() {
             </Grid>
           </main>
 
-          <h1>Welcome! </h1>
-
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
