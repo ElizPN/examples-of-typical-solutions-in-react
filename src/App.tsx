@@ -16,8 +16,6 @@ import { ChapterRouter } from "./components/ChapterRouter";
 const theme = createTheme();
 
 const customData: any = require("../package.json");
-console.log(customData.homepage);
-console.log(process.env.PUBLIC_URL);
 
 export default function App() {
   return (
