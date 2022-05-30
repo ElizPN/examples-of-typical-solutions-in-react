@@ -8,7 +8,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
-import { Main } from "./components/Main";
 import Footer from "./components/Footer";
 import { PageRouter } from "./components/PageRouter";
 import { ChapterRouter } from "./components/ChapterRouter";
@@ -23,22 +22,21 @@ export default function App() {
       <CssBaseline />
       <HashRouter>
         <Container maxWidth='lg'>
-          <Header title='Blog' />
+          <Header title='Typical challenges in React ' />
           <Menu />
           <main>
             <Grid container spacing={5} sx={{ mt: 3 }}>
-              <Main title='From the firehose' />
+              {" "}
             </Grid>
           </main>
 
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
             <Route path='/entries/:chapter/:page' element={<PageRouter />} />
             <Route path='/category/:chapter' element={<ChapterRouter />} />
           </Routes>
         </Container>
-        <Footer title='Footer' description='Yes, this is my Footer!' />
+        <Footer />
       </HashRouter>
     </ThemeProvider>
   );
