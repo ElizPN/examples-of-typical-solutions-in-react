@@ -9,7 +9,7 @@
     "@mui/material": "^5.2.2",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^12.1.10",
     "contentful": "^9.1.28",
     "react": "^17.0.2",
