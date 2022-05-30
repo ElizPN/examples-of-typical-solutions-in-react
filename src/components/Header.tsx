@@ -27,16 +27,9 @@ export const Header = (props: HeaderProps) => {
           {title}
         </Typography>
 
-        <IconButton>
-          <GitHubIcon
-            color='primary'
-            fontSize='large'
-            onClick={(event) =>
-              (window.location.href = "https://github.com/ElizPN")
-            }
-            target='_blank'
-          />
-        </IconButton>
+        <Link data-testid='github-link-header' href='https://github.com/ElizPN'>
+          <GitHubIcon color='primary' fontSize='large' />
+        </Link>
       </Toolbar>
       <Toolbar
         component='nav'
