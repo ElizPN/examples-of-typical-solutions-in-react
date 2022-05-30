@@ -8,7 +8,7 @@ This project was implemented with [Create React App](https://github.com/facebook
 - Support RTL plugin;
 - Changing the theme;
 
-![](project-gif.gif)
+
 
 ##### palettes designed by [Hamidreza Khosravi](https://github.com/hrkhosravi)
 
