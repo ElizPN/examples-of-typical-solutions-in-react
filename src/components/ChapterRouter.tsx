@@ -1,14 +1,7 @@
 import Box from "@mui/material/Box";
 import { contentfulConfig } from "../config/contentfulConfig";
 import { useLocation } from "react-router-dom";
-import {
-  JSXElementConstructor,
-  ReactElement,
-  ReactFragment,
-  ReactPortal,
-  useEffect,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import createTheme from "@mui/material/styles/createTheme";
@@ -27,7 +20,7 @@ export function ChapterRouter() {
   const location = useLocation();
   const chapter = location.pathname;
   const [arrayLinksState, setArraylinksState] = useState<ListLinks>([]);
-  const [titleChapter, setTitleChapter] = useState("uiuiui");
+  const [titleChapter, setTitleChapter] = useState("");
 
   useEffect(() => {
     client
