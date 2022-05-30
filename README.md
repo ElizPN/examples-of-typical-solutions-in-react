@@ -10,7 +10,7 @@ This project was implemented with [Create React App](https://github.com/facebook
 
 
 
-##### palettes designed by [Hamidreza Khosravi](https://github.com/hrkhosravi)
+
 
 ## Development
 
