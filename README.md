@@ -7,8 +7,8 @@ This project was implemented with [Create React App](https://github.com/facebook
 ### Features
 
 -  Support [Material UI theming system](https://mui.com/customization/theming/);
-- Support RTL plugin;
-- Changing the theme;
+- Support [Contentful API](https://www.contentful.com/developers/docs/platforms/);
+
 
 
 
