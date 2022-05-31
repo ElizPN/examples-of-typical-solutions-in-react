@@ -2,6 +2,7 @@ This project was implemented with [Create React App](https://github.com/facebook
 [Contentful API](https://www.contentful.com/) is used to get content data.
 
 
+[Link to project](https://elizpn.github.io/react-typical-challenges/)
 
 ### Features
 
