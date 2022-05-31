@@ -3,7 +3,7 @@ This project was implemented with [Create React App](https://github.com/facebook
 For page routing we use [React Router](https://reactrouter.com/) 
 
 
-[### Link to project](https://elizpn.github.io/react-typical-challenges/)
+[Link to project](https://elizpn.github.io/react-typical-challenges/)
 
 
 
@@ -11,6 +11,7 @@ For page routing we use [React Router](https://reactrouter.com/)
 
 -  Support [Material UI theming system](https://mui.com/customization/theming/);
 - Support [Contentful API](https://www.contentful.com/developers/docs/platforms/);
+- Support [React Router](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
 
 
 
