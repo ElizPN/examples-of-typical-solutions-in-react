@@ -90,7 +90,7 @@ export function PageRouter() {
 
   return (
     <Box>
-      <Page ComponentExampe={component} title={titleState} body={bodyState} />
+      <Page ComponentExample={component} title={titleState} body={bodyState} />
     </Box>
   );
 }
