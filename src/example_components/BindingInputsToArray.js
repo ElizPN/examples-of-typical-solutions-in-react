@@ -36,7 +36,7 @@ export function BindingInputsToArray() {
 
   return (
     <div>
-      {getAverage(array)}
+      <div> {getAverage(array)}</div>
       {renderToInput}
     </div>
   );
