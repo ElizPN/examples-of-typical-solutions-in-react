@@ -27,7 +27,12 @@ export const Header = (props: HeaderProps) => {
           {title}
         </Typography>
 
-        <Link data-testid='github-link-header' href='https://github.com/ElizPN'>
+        <Link
+          data-testid='github-link-header'
+          href='https://github.com/ElizPN'
+          underline='none'
+        >
+          My GitHub
           <GitHubIcon color='primary' fontSize='large' />
         </Link>
       </Toolbar>
