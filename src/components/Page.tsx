@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import { blue } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 
 interface PageProps {
@@ -14,7 +13,7 @@ export function Page(props: PageProps) {
 
   return (
     <Box>
-      <h2>{title}</h2>
+      <h2 data-testid='title'>{title}</h2>
       {body}
       {/* if component exists, we use it */}
       <Card sx={{ maxWidth: 200, border: 1, p: "10px" }}>
