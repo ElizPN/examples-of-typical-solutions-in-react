@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "../React-code.mu/src/tests_examples/Validator.test.tsx", "../React-code.mu/src/tests_examples/Validator.tsx", "../React-code.mu/src/tests_examples/MapArrToString.test.tsx"  ]
 }
