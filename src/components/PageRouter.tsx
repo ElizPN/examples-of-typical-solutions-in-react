@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import React, { useEffect, useState } from "react";
-import { contentfulConfig } from "../config/contentfulConfig";
 import { componentsMap } from "../example_components/componentsMap";
 import { Page } from "./Page";
 import { useLocation } from "react-router-dom";
@@ -8,13 +7,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { ChapterRouter } from "./ChapterRouter";
 
-var contentful = require("contentful");
-
-export function PageRouter() {
-  const client = contentful.createClient(contentfulConfig);
-
+export function PageRouter({ client }: any) {
   const [titleState, setTitleState] = useState("");
   const [bodyState, setBodyState] = useState("");
   const [ComponentNameState, setComponenetNameState] = useState("");
@@ -34,6 +28,7 @@ export function PageRouter() {
       .then(function (entries: any) {
         entries.items.forEach(function (entry: any) {
           setTitleState(entry.fields.title);
+          console.log(entry.fields);
 
           const options = {
             renderNode: {

@@ -11,6 +11,10 @@ import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import { PageRouter } from "./components/PageRouter";
 import { ChapterRouter } from "./components/ChapterRouter";
+import { contentfulConfig } from "./config/contentfulConfig";
+
+var contentful = require("contentful");
+const client = contentful.createClient(contentfulConfig);
 
 const theme = createTheme();
 
@@ -32,7 +36,10 @@ export default function App() {
 
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/entries/:chapter/:page' element={<PageRouter />} />
+            <Route
+              path='/entries/:chapter/:page'
+              element={<PageRouter client={client} />}
+            />
             <Route path='/category/:chapter' element={<ChapterRouter />} />
           </Routes>
         </Container>
