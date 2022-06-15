@@ -21,6 +21,7 @@ export function Counter() {
         }}
       />
       <button
+        data-testid='btn-sum'
         onClick={() => {
           setResult1(Number(value1) + Number(value2));
         }}
@@ -29,6 +30,7 @@ export function Counter() {
       </button>
 
       <button
+        data-testid='btn-prod'
         onClick={() => {
           setResult2(Number(value1) - Number(value2));
         }}
