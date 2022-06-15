@@ -8,7 +8,11 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-export function PageRouter({ client }: any) {
+interface ClientProps {
+  client: { getEntries: ({}) => Promise<any> };
+}
+
+export function PageRouter({ client }: ClientProps) {
   const [titleState, setTitleState] = useState("");
   const [bodyState, setBodyState] = useState("");
   const [ComponentNameState, setComponenetNameState] = useState("");
@@ -26,9 +30,10 @@ export function PageRouter({ client }: any) {
         content_type: "page",
       })
       .then(function (entries: any) {
+        console.log(entries);
+
         entries.items.forEach(function (entry: any) {
           setTitleState(entry.fields.title);
-          console.log(entry.fields);
 
           const options = {
             renderNode: {
@@ -76,6 +81,7 @@ export function PageRouter({ client }: any) {
             entry.fields.body,
             options as any
           );
+
           setBodyState(bodyRender);
 
           setComponenetNameState(entry.fields.nameComponent);
