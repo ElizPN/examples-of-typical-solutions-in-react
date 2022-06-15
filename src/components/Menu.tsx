@@ -35,7 +35,13 @@ export const Menu: FC = () => {
 
   const arrayMenuRender = arrayMenuState.map((elem, index) => {
     return (
-      <Button key={index} to={elem.url} variant='outlined' component={Link}>
+      <Button
+        data-testid='button'
+        key={index}
+        to={elem.url}
+        variant='outlined'
+        component={Link}
+      >
         {elem.text}
       </Button>
     );
