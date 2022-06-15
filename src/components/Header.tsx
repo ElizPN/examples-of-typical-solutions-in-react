@@ -10,9 +10,7 @@ interface HeaderProps {
   title: string;
 }
 
-export const Header = (props: HeaderProps) => {
-  const { title } = props;
-
+export const Header = ({ title }: HeaderProps) => {
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
