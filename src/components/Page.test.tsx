@@ -2,11 +2,14 @@ import { Page } from "./Page";
 import { render, screen } from "@testing-library/react";
 
 describe(" Page component ", () => {
-  test("reneder Page componenet ", () => {
-    render(<Page title={"hello"} body={""} />);
-    // const title = screen.queryByTestId("title");
+  test("title and body render", () => {
+    render(<Page title={"welcome"} body={"description"} />);
+    const title = screen.getByTestId("title");
+    const body = screen.getByTestId("body");
 
-    // expect(title).toHaveTextContent("hello");
-    expect(screen.queryByTestId("title")?.textContent).toEqual("hello");
+    expect(title?.textContent).toEqual("welcome");
+    // expect(screen.queryByTestId("title")?.textContent).toEqual("hello");
+
+    expect(body?.textContent).toEqual("description");
   });
 });
