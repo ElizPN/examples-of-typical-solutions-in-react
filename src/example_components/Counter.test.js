@@ -6,7 +6,6 @@ import "@testing-library/jest-dom";
 describe("Counter", () => {
   it("should render buttons", () => {
     render(<Counter />);
-    screen.debug();
 
     expect(
       getByTestId(document.documentElement, "btn-sum")

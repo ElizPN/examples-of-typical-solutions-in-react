@@ -1,8 +1,8 @@
 import { contentfulConfig } from "../config/contentfulConfig";
 import { PageRouter } from "./PageRouter";
 import { jest } from "@jest/globals";
-import { render, screen } from "@testing-library/react";
-
+import { render, screen, waitFor, getByTestId } from "@testing-library/react";
+import { HashRouter, Route, Routes } from "react-router-dom";
 // jest.mock("contentfulConfig");
 
 describe("PageRouter", () => {
@@ -13,7 +13,10 @@ describe("PageRouter", () => {
         Promise.resolve({
           items: [
             {
-              fields: { title: "Changing elements in objects array", body: {} },
+              fields: {
+                title: "Changing elements in objects array",
+                body: { content: [] },
+              },
             },
           ],
         })
@@ -21,19 +24,19 @@ describe("PageRouter", () => {
     };
   });
 
-  it("render title", () => {
-    // contentfulConfig.get.mockReturnValue(fakeClient);
+  it("should call getEntries and render title", async () => {
     render(
-      <PageRouter
-        client={{
-          getEntries: function ({}: {}): Promise<any> {
-            throw new Error("Function not implemented.");
-          },
-        }}
-      />
+      <HashRouter>
+        <PageRouter client={fakeClient} />
+      </HashRouter>
     );
     expect(fakeClient.getEntries).toBeCalledTimes(1);
+    expect(fakeClient.getEntries).toBeCalledWith({
+      content_type: "page",
+      "fields.slug": "/",
+    });
 
-    screen.debug();
+    const titleElement = await waitFor(() => screen.getByTestId("title"));
+    expect(titleElement.textContent).toBe("Changing elements in objects array");
   });
 });

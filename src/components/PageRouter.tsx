@@ -4,9 +4,7 @@ import { componentsMap } from "../example_components/componentsMap";
 import { Page } from "./Page";
 import { useLocation } from "react-router-dom";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { options } from "./CodeStyle";
 
 interface ClientProps {
   client: { getEntries: ({}) => Promise<any> };
@@ -30,52 +28,8 @@ export function PageRouter({ client }: ClientProps) {
         content_type: "page",
       })
       .then(function (entries: any) {
-        console.log(entries);
-
         entries.items.forEach(function (entry: any) {
           setTitleState(entry.fields.title);
-
-          const options = {
-            renderNode: {
-              [BLOCKS.PARAGRAPH]: (
-                node: { content: string | any[] },
-                children:
-                  | string
-                  | number
-                  | boolean
-                  | React.ReactElement<
-                      any,
-                      string | React.JSXElementConstructor<any>
-                    >
-                  | React.ReactFragment
-                  | null
-                  | undefined
-              ) => {
-                if (
-                  node.content.length === 1 &&
-                  node.content[0].marks.find(
-                    (x: { type: string }) => x.type === "code"
-                  )
-                ) {
-                  return <div>{children}</div>;
-                }
-                return <p>{children}</p>;
-              },
-            },
-            renderMark: {
-              [MARKS.CODE]: (text: string) => {
-                return (
-                  <SyntaxHighlighter
-                    language='javascript'
-                    style={obsidian}
-                    showLineNumbers
-                  >
-                    {text}
-                  </SyntaxHighlighter>
-                );
-              },
-            },
-          };
 
           const bodyRender: any = documentToReactComponents(
             entry.fields.body,
