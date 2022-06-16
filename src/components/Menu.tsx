@@ -15,8 +15,6 @@ interface ClientProps {
 export function Menu({ client }: ClientProps) {
   const [arrayMenuState, setArrayMenuState] = useState<ListLinks>([]);
 
-  // const client = contentful.createClient(contentfulConfig);
-
   useEffect(() => {
     client
       .getEntries({
@@ -39,17 +37,11 @@ export function Menu({ client }: ClientProps) {
 
   const arrayMenuRender = arrayMenuState.map((elem, index) => {
     return (
-      <Button
-        data-testid='button'
-        key={index}
-        to={elem.url}
-        variant='outlined'
-        component={Link}
-      >
+      <Button key={index} to={elem.url} variant='outlined' component={Link}>
         {elem.text}
       </Button>
     );
   });
 
-  return <>{arrayMenuRender}</>;
+  return <div data-testid='menu'>{arrayMenuRender}</div>;
 }
