@@ -3,7 +3,6 @@ import { PageRouter } from "./PageRouter";
 import { jest } from "@jest/globals";
 import { render, screen, waitFor, getByTestId } from "@testing-library/react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-// jest.mock("contentfulConfig");
 
 describe("PageRouter", () => {
   let fakeClient: any;
