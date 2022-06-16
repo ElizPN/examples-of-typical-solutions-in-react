@@ -24,7 +24,7 @@ describe("Menu", () => {
     };
   });
 
-  test("should call getEntries and render button", async () => {
+  test("should call getEntries and render menu", async () => {
     render(
       <HashRouter>
         <Menu client={fakeClient} />
