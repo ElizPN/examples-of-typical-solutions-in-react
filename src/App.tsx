@@ -27,7 +27,7 @@ export default function App() {
       <HashRouter>
         <Container maxWidth='lg'>
           <Header title='Typical challenges in React ' />
-          <Menu />
+          <Menu client={client} />
           <main>
             <Grid container spacing={5} sx={{ mt: 3 }}>
               {" "}
@@ -40,7 +40,10 @@ export default function App() {
               path='/entries/:chapter/:page'
               element={<PageRouter client={client} />}
             />
-            <Route path='/category/:chapter' element={<ChapterRouter />} />
+            <Route
+              path='/category/:chapter'
+              element={<ChapterRouter client={client} />}
+            />
           </Routes>
         </Container>
         <Footer />

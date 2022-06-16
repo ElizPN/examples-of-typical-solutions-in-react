@@ -8,10 +8,14 @@ var contentful = require("contentful");
 
 type ListLinks = Record<"text" | "url", string>[];
 
-export const Menu: FC = () => {
+interface ClientProps {
+  client: { getEntries: ({}) => Promise<any> };
+}
+
+export function Menu({ client }: ClientProps) {
   const [arrayMenuState, setArrayMenuState] = useState<ListLinks>([]);
 
-  const client = contentful.createClient(contentfulConfig);
+  // const client = contentful.createClient(contentfulConfig);
 
   useEffect(() => {
     client
@@ -48,4 +52,4 @@ export const Menu: FC = () => {
   });
 
   return <>{arrayMenuRender}</>;
-};
+}

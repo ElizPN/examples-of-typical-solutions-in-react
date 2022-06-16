@@ -13,10 +13,13 @@ var contentful = require("contentful");
 
 type ListLinks = Record<"title" | "url" | "body", any>[];
 
+interface ClientProps {
+  client: { getEntries: ({}) => Promise<any> };
+}
+
 const theme = createTheme();
 
-export function ChapterRouter() {
-  const client = contentful.createClient(contentfulConfig);
+export function ChapterRouter({ client }: ClientProps) {
   const location = useLocation();
   const chapter = location.pathname;
   const [arrayLinksState, setArraylinksState] = useState<ListLinks>([]);
