@@ -3,7 +3,7 @@ import { Menu } from "./Menu";
 import { jest } from "@jest/globals";
 
 import "@testing-library/jest-dom/extend-expect";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Link } from "react-router-dom";
 
 describe("Menu", () => {
   let fakeClient: any;
@@ -31,10 +31,14 @@ describe("Menu", () => {
       </HashRouter>
     );
     expect(fakeClient.getEntries).toBeCalledTimes(1);
-    screen.debug();
-    const menu = await waitFor(() => screen.queryByTestId("menu"));
-    console.log(menu);
 
+    const menu = await waitFor(() => screen.queryByTestId("menu"));
+    screen.debug();
     expect(menu?.textContent).toBe("Arrays of objects");
+
+    expect(screen.getByRole("link")).toHaveAttribute(
+      "href",
+      "#/category/arrays-of-objects"
+    );
   });
 });
