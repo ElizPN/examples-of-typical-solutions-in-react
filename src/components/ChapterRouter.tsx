@@ -32,6 +32,7 @@ export function ChapterRouter({ client }: ClientProps) {
         "fields.slug": chapter,
       })
       .then(function (entries: any) {
+        console.log(entries);
         const title = entries.items[0].fields.textMenu;
         setTitleChapter(title);
       });
