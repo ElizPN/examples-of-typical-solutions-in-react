@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import createTheme from "@mui/material/styles/createTheme";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import ThemeProvider from "@mui/material/styles/ThemeProvider";
+// import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import Button from "@mui/material/Button";
 
 var contentful = require("contentful");
@@ -17,7 +17,7 @@ interface ClientProps {
   client: { getEntries: ({}) => Promise<any> };
 }
 
-const theme = createTheme();
+// const theme = createTheme();
 
 export function ChapterRouter({ client }: ClientProps) {
   const location = useLocation();
@@ -32,17 +32,18 @@ export function ChapterRouter({ client }: ClientProps) {
         "fields.slug": chapter,
       })
       .then(function (entries: any) {
-        console.log(entries);
         const title = entries.items[0].fields.textMenu;
         setTitleChapter(title);
       });
 
     client
       .getEntries({
-        "fields.chapter": chapter,
         content_type: "page",
+        "fields.chapter": chapter,
       })
       .then(function (entries: any) {
+        console.log(entries);
+
         const arrayList: ListLinks = entries.items.map(
           (elem: { fields: { title: string; slug: string; body: any } }) => {
             const body = documentToReactComponents(elem.fields.body) as any;
@@ -64,11 +65,12 @@ export function ChapterRouter({ client }: ClientProps) {
   if (!arrayLinksState.length) {
     return <p>Loading...</p>;
   }
+  console.log(arrayLinksState.length);
 
   const arrayLinksRender: any = arrayLinksState.map((elem, index) => {
     return (
       <Stack mb={5} spacing={0.5} key={index}>
-        <Button to={elem.url} variant='outlined' component={Link}>
+        <Button role='link' to={elem.url} variant='outlined' component={Link}>
           {elem.title}
         </Button>
         <Box>{elem.body}</Box>
@@ -77,9 +79,9 @@ export function ChapterRouter({ client }: ClientProps) {
   });
 
   return (
-    <ThemeProvider theme={theme}>
-      <h1>{titleChapter}</h1>
-      {arrayLinksRender}
-    </ThemeProvider>
+    <div>
+      <h1 data-testid='titleChapter'>{titleChapter}</h1>
+      <div>{arrayLinksRender}</div>
+    </div>
   );
 }

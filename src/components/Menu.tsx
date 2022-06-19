@@ -27,7 +27,6 @@ export function Menu({ client }: ClientProps) {
               text: elem.fields.textMenu,
               url: elem.fields.slug,
             };
-            console.log(window.location.href);
 
             return itemMenu;
           }

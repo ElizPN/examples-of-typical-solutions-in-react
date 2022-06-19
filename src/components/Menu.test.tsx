@@ -9,7 +9,7 @@ describe("Menu", () => {
   let fakeClient: any;
   beforeEach(() => {
     fakeClient = {
-      getEntries: jest.fn().mockImplementationOnce(() =>
+      getEntries: jest.fn().mockImplementation(() =>
         Promise.resolve({
           items: [
             {
@@ -24,7 +24,7 @@ describe("Menu", () => {
     };
   });
 
-  test("should call getEntries and render menu", async () => {
+  test("should call getEntries and render menu button", async () => {
     render(
       <HashRouter>
         <Menu client={fakeClient} />
@@ -33,7 +33,7 @@ describe("Menu", () => {
     expect(fakeClient.getEntries).toBeCalledTimes(1);
 
     const menu = await waitFor(() => screen.queryByTestId("menu"));
-    screen.debug();
+
     expect(menu?.textContent).toBe("Arrays of objects");
 
     expect(screen.getByRole("link")).toHaveAttribute(
