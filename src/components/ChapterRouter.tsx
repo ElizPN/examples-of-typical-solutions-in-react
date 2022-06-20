@@ -42,8 +42,6 @@ export function ChapterRouter({ client }: ClientProps) {
         "fields.chapter": chapter,
       })
       .then(function (entries: any) {
-        console.log(entries);
-
         const arrayList: ListLinks = entries.items.map(
           (elem: { fields: { title: string; slug: string; body: any } }) => {
             const body = documentToReactComponents(elem.fields.body) as any;
@@ -65,7 +63,6 @@ export function ChapterRouter({ client }: ClientProps) {
   if (!arrayLinksState.length) {
     return <p>Loading...</p>;
   }
-  console.log(arrayLinksState.length);
 
   const arrayLinksRender: any = arrayLinksState.map((elem, index) => {
     return (
