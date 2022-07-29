@@ -1,8 +1,14 @@
 import { FC } from "react";
+import { Provider } from "react-redux";
+import MyComponent from "./MyComponent";
+import { store } from "../app/store";
 
 export const Home: FC = () => {
   return (
     <div>
+      <Provider store={store}>
+        <MyComponent backgroundColor='black' />
+      </Provider>
       <h1>Welcome! </h1>
       <p>
         On this website you will see solutions to the most common tasks on
