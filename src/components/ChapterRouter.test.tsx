@@ -48,8 +48,9 @@ describe("ChapterRouter,", () => {
         <ChapterRouter client={fakeClientTitle} />
       </HashRouter>
     );
+
     // calls 2 times
-    // expect(fakeClient.getEntries).toBeCalledTimes(1);
+    // expect(fakeClientTitle.getEntries).toBeCalledTimes(1);
     await waitFor(() => {
       expect(screen.getByTestId("titleChapter").innerHTML).toBe("Arrays");
     });
