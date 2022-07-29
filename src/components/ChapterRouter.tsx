@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import createTheme from "@mui/material/styles/createTheme";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-// import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import Button from "@mui/material/Button";
 
 var contentful = require("contentful");
@@ -17,7 +16,7 @@ interface ClientProps {
   client: { getEntries: ({}) => Promise<any> };
 }
 
-// const theme = createTheme();
+
 
 export function ChapterRouter({ client }: ClientProps) {
   const location = useLocation();
