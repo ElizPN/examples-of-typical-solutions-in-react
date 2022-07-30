@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-const onOffReducer = (state = { isOn: true }, action: any) => {
+
+const menuReducer = (
+  state = { menuList: [] },
+  action: { type: string; item: string }
+) => {
   switch (action.type) {
-    case "TOGGLE_IS_ON":
-      return { ...state, isOn: !state.isOn };
+    case "CHANGE_MENU":
+      return { ...state, menuList: [...state.menuList, action.item] };
 
     default:
       return state;
@@ -11,7 +15,7 @@ const onOffReducer = (state = { isOn: true }, action: any) => {
 
 export const store = configureStore({
   reducer: {
-    isOn: onOffReducer,
+    menuList: menuReducer as any,
   },
 });
 
