@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { MenuItem } from "../components/Menu";
 
 const menuReducer = (
   state = { menuList: [] },
-  action: { type: string; item: string }
+  action: { type: string; item: MenuItem }
 ) => {
   switch (action.type) {
     case "CHANGE_MENU":

@@ -8,7 +8,8 @@ import { contentfulConfig } from "../config/contentfulConfig";
 
 var contentful = require("contentful");
 
-type ListLinks = Record<"text" | "url", string>[];
+export type MenuItem = Record<"text" | "url", string>;
+export type ListLinks = MenuItem[];
 
 // The inferred type will look like:
 // {isOn: boolean, toggleOn: () => void}
@@ -29,7 +30,7 @@ const mapState = (state: RootState) => ({
 });
 
 const mapDispatch = {
-  changeState: (item: string) => ({
+  addMenuItem: (item: MenuItem) => ({
     type: "CHANGE_MENU",
     item,
   }),
@@ -37,51 +38,42 @@ const mapDispatch = {
 
 const connector = connect(mapState, mapDispatch);
 
-const Menu = ({ client, menuList, changeState }: ClientProps) => {
-  const [arrayMenuState, setArrayMenuState] = useState<ListLinks>([]);
-
+const Menu = ({ client, menuList, addMenuItem }: ClientProps) => {
   useEffect(() => {
     client
       .getEntries({
         content_type: "menu",
       })
       .then(function (entries: any) {
-        const arrayMenu: ListLinks = entries.items.map(
+        entries.items.map(
           (elem: { fields: { textMenu: string; slug: string } }) => {
-            const itemMenu = {
+            const itemMenu: MenuItem = {
               text: elem.fields.textMenu,
               url: elem.fields.slug,
             };
-
-            return itemMenu;
+            addMenuItem(itemMenu);
           }
         );
-        setArrayMenuState(arrayMenu);
       });
   }, []);
 
-  const arrayMenuRender = arrayMenuState.map((elem, index) => {
-    return (
-      <Button key={index} to={elem.url} variant='outlined' component={Link}>
-        {elem.text}
-      </Button>
-    );
-  });
-
   return (
     <div>
-      <div data-testid='menu'>{arrayMenuRender}</div>
-      {menuList &&
-        menuList.menuList.map((item) => {
-          return <div>{item}</div>;
-        })}
-      <button
-        onClick={() => {
-          changeState("liza");
-        }}
-      >
-        Change state
-      </button>
+      <div data-testid='menu'>
+        {menuList &&
+          menuList.menuList.map((elem: MenuItem, index) => {
+            return (
+              <Button
+                key={index}
+                to={elem.url}
+                variant='outlined'
+                component={Link}
+              >
+                {elem.text}
+              </Button>
+            );
+          })}
+      </div>
     </div>
   );
 };
