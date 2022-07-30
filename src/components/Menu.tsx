@@ -19,22 +19,25 @@ interface ClientProps extends PropsFromRedux {
 }
 
 interface RootState {
-  isOn: {
-    isOn: boolean;
+  menuList: {
+    menuList: [];
   };
 }
 
 const mapState = (state: RootState) => ({
-  isOn: state.isOn,
+  menuList: state.menuList,
 });
 
 const mapDispatch = {
-  toggleOn: () => ({ type: "TOGGLE_IS_ON" }),
+  changeState: (item: string) => ({
+    type: "CHANGE_MENU",
+    item,
+  }),
 };
 
 const connector = connect(mapState, mapDispatch);
 
-const Menu = ({ client, toggleOn, isOn }: ClientProps) => {
+const Menu = ({ client, menuList, changeState }: ClientProps) => {
   const [arrayMenuState, setArrayMenuState] = useState<ListLinks>([]);
 
   useEffect(() => {
@@ -68,7 +71,17 @@ const Menu = ({ client, toggleOn, isOn }: ClientProps) => {
   return (
     <div>
       <div data-testid='menu'>{arrayMenuRender}</div>
-      <button onClick={toggleOn}>Toggle is {isOn.isOn ? "ON" : "OFF"}</button>
+      {menuList &&
+        menuList.menuList.map((item) => {
+          return <div>{item}</div>;
+        })}
+      <button
+        onClick={() => {
+          changeState("liza");
+        }}
+      >
+        Change state
+      </button>
     </div>
   );
 };
