@@ -6,30 +6,11 @@ import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
 
 var contentful = require("contentful");
 
-// export type MenuItem = Record<"text" | "url", string>;
-
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 interface ClientProps extends PropsFromRedux {
   client: { getEntries: ({}) => Promise<any> };
 }
-
-// interface RootState {
-//   menuList: {
-//     menuList: [];
-//   };
-// }
-
-// const mapState = (state: RootState) => ({
-//   menuList: state.menuList,
-// });
-
-// const mapDispatch = {
-//   addMenuItem: (item: MenuItem) => ({
-//     type: "CHANGE_MENU",
-//     item,
-//   }),
-// };
 
 const connector = connect(mapState, mapDispatch);
 
