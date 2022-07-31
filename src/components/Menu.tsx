@@ -15,8 +15,6 @@ interface ClientProps extends PropsFromRedux {
 const connector = connect(mapState, mapDispatch);
 
 const Menu = ({ client, menuList, addMenuItem }: ClientProps) => {
-  console.log(menuList);
-
   useEffect(() => {
     client
       .getEntries({
