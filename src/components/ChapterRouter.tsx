@@ -7,18 +7,22 @@ import Stack from "@mui/material/Stack";
 import createTheme from "@mui/material/styles/createTheme";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Button from "@mui/material/Button";
+import { connect, ConnectedProps } from "react-redux";
+import { mapDispatch, mapState } from "../app/map_state_dispatch";
 
 var contentful = require("contentful");
 
 type ListLinks = Record<"title" | "url" | "body", any>[];
 
-interface ClientProps {
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+interface ClientProps extends PropsFromRedux {
   client: { getEntries: ({}) => Promise<any> };
 }
 
+const connector = connect(mapState, mapDispatch);
 
-
-export function ChapterRouter({ client }: ClientProps) {
+const ChapterRouter = ({ client }: ClientProps) => {
   const location = useLocation();
   const chapter = location.pathname;
   const [arrayLinksState, setArraylinksState] = useState<ListLinks>([]);
@@ -80,4 +84,6 @@ export function ChapterRouter({ client }: ClientProps) {
       <div>{arrayLinksRender}</div>
     </div>
   );
-}
+};
+
+export default connector(ChapterRouter);
