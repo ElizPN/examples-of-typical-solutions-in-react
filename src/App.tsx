@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import { PageRouter } from "./components/PageRouter";
-import { ChapterRouter } from "./components/ChapterRouter";
+import ChapterRouter from "./components/ChapterRouter";
 import { contentfulConfig } from "./config/contentfulConfig";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
@@ -47,7 +47,11 @@ export default function App() {
             />
             <Route
               path='/category/:chapter'
-              element={<ChapterRouter client={client} />}
+              element={
+                <Provider store={store}>
+                  <ChapterRouter client={client} />
+                </Provider>
+              }
             />
           </Routes>
         </Container>
