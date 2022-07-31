@@ -1,44 +1,41 @@
 import { Button } from "@mui/material";
-import { FC, useEffect, useState } from "react";
-import { connect, ConnectedProps, Provider } from "react-redux";
+import { useEffect } from "react";
+import { connect, ConnectedProps } from "react-redux";
 import { Link } from "react-router-dom";
-import { indexof } from "stylis";
-import { store } from "../app/store";
-import { contentfulConfig } from "../config/contentfulConfig";
+import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
 
 var contentful = require("contentful");
 
-export type MenuItem = Record<"text" | "url", string>;
-export type ListLinks = MenuItem[];
+// export type MenuItem = Record<"text" | "url", string>;
 
-// The inferred type will look like:
-// {isOn: boolean, toggleOn: () => void}
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 interface ClientProps extends PropsFromRedux {
   client: { getEntries: ({}) => Promise<any> };
 }
 
-interface RootState {
-  menuList: {
-    menuList: [];
-  };
-}
+// interface RootState {
+//   menuList: {
+//     menuList: [];
+//   };
+// }
 
-const mapState = (state: RootState) => ({
-  menuList: state.menuList,
-});
+// const mapState = (state: RootState) => ({
+//   menuList: state.menuList,
+// });
 
-const mapDispatch = {
-  addMenuItem: (item: MenuItem) => ({
-    type: "CHANGE_MENU",
-    item,
-  }),
-};
+// const mapDispatch = {
+//   addMenuItem: (item: MenuItem) => ({
+//     type: "CHANGE_MENU",
+//     item,
+//   }),
+// };
 
 const connector = connect(mapState, mapDispatch);
 
 const Menu = ({ client, menuList, addMenuItem }: ClientProps) => {
+  console.log(menuList);
+
   useEffect(() => {
     client
       .getEntries({

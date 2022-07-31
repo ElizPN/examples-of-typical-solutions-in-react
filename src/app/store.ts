@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { MenuItem } from "../components/Menu";
+import { MenuItem } from "./map_state_dispatch";
 
 const menuReducer = (
   state = { menuList: [] },
