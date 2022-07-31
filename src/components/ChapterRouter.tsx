@@ -8,7 +8,7 @@ import createTheme from "@mui/material/styles/createTheme";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Button from "@mui/material/Button";
 import { connect, ConnectedProps } from "react-redux";
-import { mapDispatch, mapState } from "../app/map_state_dispatch";
+import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
 
 var contentful = require("contentful");
 
@@ -22,11 +22,10 @@ interface ClientProps extends PropsFromRedux {
 
 const connector = connect(mapState, mapDispatch);
 
-const ChapterRouter = ({ client }: ClientProps) => {
+const ChapterRouter = ({ client, menuList }: ClientProps) => {
   const location = useLocation();
   const chapter = location.pathname;
   const [arrayLinksState, setArraylinksState] = useState<ListLinks>([]);
-  const [titleChapter, setTitleChapter] = useState("");
 
   useEffect(() => {
     client
@@ -36,7 +35,6 @@ const ChapterRouter = ({ client }: ClientProps) => {
       })
       .then(function (entries: any) {
         const title = entries.items[0].fields.textMenu;
-        setTitleChapter(title);
       });
 
     client
@@ -78,9 +76,20 @@ const ChapterRouter = ({ client }: ClientProps) => {
     );
   });
 
+  function filterByCurrentChapter(item: any) {
+    if (item.url === chapter) {
+      return true;
+    }
+  }
+
+  const chapterTitles: MenuItem[] =
+    menuList && menuList.menuList.filter(filterByCurrentChapter);
+
+  const chapterTitle: string = chapterTitles[0].text;
+
   return (
     <div>
-      <h1 data-testid='titleChapter'>{titleChapter}</h1>
+      <h1 data-testid='titleChapter'>{chapterTitle}</h1>
       <div>{arrayLinksRender}</div>
     </div>
   );
