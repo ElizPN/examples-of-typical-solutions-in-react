@@ -10,8 +10,6 @@ import Button from "@mui/material/Button";
 import { connect, ConnectedProps } from "react-redux";
 import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
 
-var contentful = require("contentful");
-
 type ListLinks = Record<"title" | "url" | "body", any>[];
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
@@ -22,7 +20,7 @@ interface ClientProps extends PropsFromRedux {
 
 const connector = connect(mapState, mapDispatch);
 
-const ChapterRouter = ({ client, menuList }: ClientProps) => {
+export const ChapterRouter = ({ client, menuList }: ClientProps) => {
   const location = useLocation();
   const chapter = location.pathname;
   const [arrayLinksState, setArraylinksState] = useState<ListLinks>([]);
@@ -82,10 +80,11 @@ const ChapterRouter = ({ client, menuList }: ClientProps) => {
     }
   }
 
-  const chapterTitles: MenuItem[] =
+  const filteredMenu: MenuItem[] =
     menuList && menuList.menuList.filter(filterByCurrentChapter);
 
-  const chapterTitle: string = chapterTitles[0].text;
+  const chapterTitle: string =
+    filteredMenu && filteredMenu[0] ? filteredMenu[0]?.text : "";
 
   return (
     <div>
