@@ -2,7 +2,6 @@ import { Box, Grid } from "@mui/material";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import "./general.css";
 import Menu from "./components/Menu";
-import { About } from "./components/About";
 import { Home } from "./components/Home";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";

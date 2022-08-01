@@ -2,7 +2,7 @@ export type MenuItem = Record<"text" | "url", string>;
 
 export interface RootState {
   menuList: {
-    menuList: [];
+    menuList: MenuItem[];
   };
 }
 

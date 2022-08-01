@@ -1,27 +1,13 @@
 import { jest } from "@jest/globals";
 import { act, render, screen, waitFor } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
-import { ChapterRouter } from "./ChapterRouter";
+import { MenuItem } from "../app/map_state_dispatch";
+import { store } from "../app/store";
+import { ChapterRouter as ChapterRouterSimple } from "./ChapterRouter";
+import ChapterRouter from "./ChapterRouter";
 
 describe("ChapterRouter,", () => {
-  let fakeClientTitle: any;
-  beforeEach(() => {
-    fakeClientTitle = {
-      getEntries: jest.fn().mockImplementation(() =>
-        Promise.resolve({
-          items: [
-            {
-              fields: {
-                textMenu: "Arrays",
-                slug: "/category/arrays",
-              },
-            },
-          ],
-        })
-      ),
-    };
-  });
-
   let fakeClientLinks: any;
   beforeEach(() => {
     fakeClientLinks = {
@@ -43,9 +29,18 @@ describe("ChapterRouter,", () => {
   });
 
   it("should call getEntries and render title of chapter", async () => {
+    window.history.pushState({}, "Page Title", "#/some_url");
+
+    const menuList: { menuList: MenuItem[] } = {
+      menuList: [{ text: "Arrays", url: "/some_url" }],
+    };
     render(
       <HashRouter>
-        <ChapterRouter client={fakeClientTitle} />
+        <ChapterRouterSimple
+          client={fakeClientLinks}
+          menuList={menuList}
+          addMenuItem={jest.fn()}
+        />
       </HashRouter>
     );
 
@@ -56,17 +51,18 @@ describe("ChapterRouter,", () => {
     });
   });
 
-  test("should call getEntries and render link to pages", async () => {
+  it("should call getEntries and render link to pages", async () => {
     render(
       <HashRouter>
-        <ChapterRouter client={fakeClientLinks} />
+        <Provider store={store}>
+          <ChapterRouter client={fakeClientLinks} />
+        </Provider>
       </HashRouter>
     );
 
     const link = await waitFor(() => screen.queryByTestId("link"));
     screen.debug();
 
-    console.log(link);
     // expect(link?.textContent).toBe("Changing elements in objects array");
 
     // expect(screen.getByRole("link")).toHaveAttribute(
