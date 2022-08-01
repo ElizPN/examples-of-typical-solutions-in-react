@@ -1,9 +1,11 @@
 import { screen, render, waitFor } from "@testing-library/react";
-import { Menu } from "./Menu";
+import Menu from "./Menu";
 import { jest } from "@jest/globals";
 
 import "@testing-library/jest-dom/extend-expect";
 import { HashRouter, Link } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "../app/store";
 
 describe("Menu", () => {
   let fakeClient: any;
@@ -27,7 +29,9 @@ describe("Menu", () => {
   test("should call getEntries and render menu button", async () => {
     render(
       <HashRouter>
-        <Menu client={fakeClient} />
+        <Provider store={store}>
+          <Menu client={fakeClient} />
+        </Provider>
       </HashRouter>
     );
     expect(fakeClient.getEntries).toBeCalledTimes(1);
