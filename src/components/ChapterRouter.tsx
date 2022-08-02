@@ -28,15 +28,6 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
   useEffect(() => {
     client
       .getEntries({
-        content_type: "menu",
-        "fields.slug": chapter,
-      })
-      .then(function (entries: any) {
-        const title = entries.items[0].fields.textMenu;
-      });
-
-    client
-      .getEntries({
         content_type: "page",
         "fields.chapter": chapter,
       })
