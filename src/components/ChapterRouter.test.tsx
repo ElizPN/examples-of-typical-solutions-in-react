@@ -44,8 +44,7 @@ describe("ChapterRouter,", () => {
       </HashRouter>
     );
 
-    // calls 2 times
-    // expect(fakeClientTitle.getEntries).toBeCalledTimes(1);
+    expect(fakeClientLinks.getEntries).toBeCalledTimes(1);
     await waitFor(() => {
       expect(screen.getByTestId("titleChapter").innerHTML).toBe("Arrays");
     });
@@ -60,18 +59,8 @@ describe("ChapterRouter,", () => {
       </HashRouter>
     );
 
-    const link = await waitFor(() => screen.queryByTestId("link"));
-    screen.debug();
-
-    // expect(link?.textContent).toBe("Changing elements in objects array");
-
-    // expect(screen.getByRole("link")).toHaveAttribute(
-    //   "href",
-    //   "/entries/arrays-of-objects/changing-elements-in-objects-array"
-    // );
+    await waitFor(() => screen.queryByTestId("link"));
+    // screen.debug();
     expect(screen.getByRole("link")).toBeTruthy;
-    // expect(screen.getByRole("link")).toHaveTextContent(
-    //   "Changing elements in objects array"
-    // );
   });
 });
