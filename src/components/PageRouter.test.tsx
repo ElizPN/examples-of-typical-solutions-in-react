@@ -31,8 +31,8 @@ describe("PageRouter", () => {
     );
     expect(fakeClient.getEntries).toBeCalledTimes(1);
     expect(fakeClient.getEntries).toBeCalledWith({
-      content_type: "page",
       "fields.slug": "/",
+      content_type: "page",
     });
 
     const titleElement = await waitFor(() => screen.getByTestId("title"));

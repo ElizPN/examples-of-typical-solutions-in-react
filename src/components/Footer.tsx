@@ -15,7 +15,7 @@ function Copyright() {
         href='https://github.com/ElizPN'
       >
         My GitHub
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
       {"."}
     </Typography>
