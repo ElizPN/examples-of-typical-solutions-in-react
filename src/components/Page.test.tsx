@@ -8,8 +8,6 @@ describe(" Page component ", () => {
     const body = screen.getByTestId("body");
 
     expect(title?.textContent).toEqual("welcome");
-    // expect(screen.queryByTestId("title")?.textContent).toEqual("hello");
-
     expect(body?.textContent).toEqual("description");
   });
 });
