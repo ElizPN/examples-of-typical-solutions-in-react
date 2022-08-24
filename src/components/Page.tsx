@@ -1,16 +1,19 @@
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
+import { ReactNode } from "react";
 
 interface PageProps {
   title: string;
-  body: string;
+  body: ReactNode;
   ComponentExample?: React.FC;
 }
 
-export function Page(props: PageProps) {
-  const { ComponentExample: ComponentExample, title, body } = props;
-
+export function Page({
+  ComponentExample: ComponentExample,
+  title,
+  body,
+}: PageProps) {
   return (
     <Box>
       <h2 data-testid='title'>{title}</h2>
