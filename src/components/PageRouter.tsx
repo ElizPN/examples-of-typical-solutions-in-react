@@ -8,7 +8,7 @@ import { options } from "./CodeStyle";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { Document } from "@contentful/rich-text-types";
 
-type Entry = {
+type EntryContentful = {
   fields: {
     title: React.SetStateAction<string>;
     body: Document;
@@ -18,8 +18,11 @@ type Entry = {
 
 interface ClientProps {
   client: {
-    getEntries: ({}) => Promise<{
-      items: [Entry];
+    getEntries: (filters: {
+      "fields.slug": string;
+      content_type: string;
+    }) => Promise<{
+      items: [EntryContentful];
     }>;
   };
 }
@@ -42,7 +45,7 @@ export function PageRouter({ client }: ClientProps) {
         content_type: "page",
       })
       .then(function (entries) {
-        entries.items.forEach(function (entry: Entry) {
+        entries.items.forEach(function (entry: EntryContentful) {
           setTitleState(entry.fields.title);
 
           const bodyRender: ReactNode = documentToReactComponents(
