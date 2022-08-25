@@ -10,6 +10,14 @@ import Button from "@mui/material/Button";
 import { connect, ConnectedProps } from "react-redux";
 import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
 
+type EntryChapterContentful = {
+  fields: {
+    title: string;
+    slug: string;
+    body: any;
+  };
+};
+
 type ListLinks = Record<"title" | "url" | "body", any>[];
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
@@ -31,9 +39,9 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
         content_type: "page",
         "fields.chapter": chapter,
       })
-      .then(function (entries: any) {
+      .then(function (entries: { items: [EntryChapterContentful] }) {
         const arrayList: ListLinks = entries.items.map(
-          (elem: { fields: { title: string; slug: string; body: any } }) => {
+          (elem: EntryChapterContentful) => {
             const body = documentToReactComponents(elem.fields.body) as any;
 
             const article = {
@@ -54,7 +62,7 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
     return <p>Loading...</p>;
   }
 
-  const arrayLinksRender: any = arrayLinksState.map((elem, index) => {
+  const arrayLinksRender: JSX.Element[] = arrayLinksState.map((elem, index) => {
     return (
       <Stack mb={5} spacing={0.5} key={index}>
         <Button role='link' to={elem.url} variant='outlined' component={Link}>
@@ -65,7 +73,7 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
     );
   });
 
-  function filterByCurrentChapter(item: any) {
+  function filterByCurrentChapter(item: MenuItem) {
     if (item.url === chapter) {
       return true;
     }
