@@ -8,8 +8,19 @@ var contentful = require("contentful");
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
+type MenuEntryContentful = {
+  fields: {
+    textMenu: string;
+    slug: string;
+  };
+};
+
 interface ClientProps extends PropsFromRedux {
-  client: { getEntries: ({}) => Promise<any> };
+  client: {
+    getEntries: ({}) => Promise<{
+      items: [MenuEntryContentful];
+    }>;
+  };
 }
 
 const connector = connect(mapState, mapDispatch);
@@ -20,16 +31,14 @@ const Menu = ({ client, menuList, addMenuItem }: ClientProps) => {
       .getEntries({
         content_type: "menu",
       })
-      .then(function (entries: any) {
-        entries.items.map(
-          (elem: { fields: { textMenu: string; slug: string } }) => {
-            const itemMenu: MenuItem = {
-              text: elem.fields.textMenu,
-              url: elem.fields.slug,
-            };
-            addMenuItem(itemMenu);
-          }
-        );
+      .then(function (entries) {
+        entries.items.map((elem: MenuEntryContentful) => {
+          const itemMenu: MenuItem = {
+            text: elem.fields.textMenu,
+            url: elem.fields.slug,
+          };
+          addMenuItem(itemMenu);
+        });
       });
   }, []);
 
