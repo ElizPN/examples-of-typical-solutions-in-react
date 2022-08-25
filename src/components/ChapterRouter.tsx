@@ -1,11 +1,10 @@
 import Box from "@mui/material/Box";
-import { contentfulConfig } from "../config/contentfulConfig";
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
-import createTheme from "@mui/material/styles/createTheme";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document } from "@contentful/rich-text-types";
 import Button from "@mui/material/Button";
 import { connect, ConnectedProps } from "react-redux";
 import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
@@ -14,7 +13,7 @@ type EntryChapterContentful = {
   fields: {
     title: string;
     slug: string;
-    body: any;
+    body: Document;
   };
 };
 
@@ -23,7 +22,9 @@ type ListLinks = Record<"title" | "url" | "body", any>[];
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 interface ClientProps extends PropsFromRedux {
-  client: { getEntries: ({}) => Promise<any> };
+  client: {
+    getEntries: ({}) => Promise<{ items: [EntryChapterContentful] }>;
+  };
 }
 
 const connector = connect(mapState, mapDispatch);
@@ -42,7 +43,7 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
       .then(function (entries: { items: [EntryChapterContentful] }) {
         const arrayList: ListLinks = entries.items.map(
           (elem: EntryChapterContentful) => {
-            const body = documentToReactComponents(elem.fields.body) as any;
+            const body: any = documentToReactComponents(elem.fields.body);
 
             const article = {
               title: elem.fields.title,
