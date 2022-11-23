@@ -1,7 +1,6 @@
 # `React typical challenges`
 
-On this website you will see solutions to the most common tasks on React. Here I describe how to add add, remove, and modify array elements. There is also described creating a universal form for changing and adding new elements.
-You can also find breaf explanation about implementation Redux store for React components and unit test for them.
+On this website you will see solutions to the most common tasks on React. Topics include implementation Redux store for React components, unit tests, React hooks and working with data stractures.
 
 Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 
