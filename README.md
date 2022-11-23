@@ -7,6 +7,7 @@ Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 
 ## Technologies and libraries used: 
 
+-  Language - [TypeScript] (https://www.typescriptlang.org/)
 -  Server - [Contentful API](https://www.contentful.com/)
 -  Client Framework - [React](https://reactjs.org), [Redux](https://redux.js.org)
 -  Page routing - [React Router](https://reactrouter.com/)
