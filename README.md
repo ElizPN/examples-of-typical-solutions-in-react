@@ -10,6 +10,7 @@ Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 -  Language - [TypeScript](https://www.typescriptlang.org/)
 -  Server - [Contentful API](https://www.contentful.com/)
 -  Client Framework - [React](https://reactjs.org), [Redux](https://redux.js.org)
+-  Testing - [Jest](https://jestjs.io), [React Testing Library](https://testing-library.com)
 -  Page routing - [React Router](https://reactrouter.com/)
 -  Styles - [Material UI](https://mui.com/) 
 
