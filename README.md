@@ -3,18 +3,16 @@
 On this website you will see solutions to the most common tasks on React. Here I describe how to add add, remove, and modify array elements. There is also described creating a universal form for changing and adding new elements.
 You can also find breaf explanation about implementation Redux store for React components and writtting unit test for them.
 
+Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 
-This project was implemented with [Create React App](https://github.com/facebook/create-react-app) and is a boilerplate for start a developing with [ReactJS](https://reactjs.org/), [Material UI](https://mui.com/) and [TypeScript](https://www.typescriptlang.org/).
-[Contentful API](https://www.contentful.com/) is used to get content data.
-For page routing we use [React Router](https://reactrouter.com/)
 
-[Link to project](https://elizpn.github.io/react-typical-challenges/)
+## Technologies and libraries used: 
 
-### Features
+-  Server - [Contentful API](https://www.contentful.com/)
+-  Client Framework - [React](https://reactjs.org)
+-  Page routing - [React Router](https://reactrouter.com/)
+-  Styles - [Material UI](https://mui.com/) 
 
-- Support [Material UI theming system](https://mui.com/customization/theming/);
-- Support [Contentful API](https://www.contentful.com/developers/docs/platforms/);
-- Support [React Router](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
 
 ## Development
 
