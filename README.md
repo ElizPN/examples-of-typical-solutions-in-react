@@ -1,14 +1,34 @@
-This project was implemented with [Create React App](https://github.com/facebook/create-react-app) and is a boilerplate for start a developing with [ReactJS](https://reactjs.org/), [Material UI](https://mui.com/) and [TypeScript](https://www.typescriptlang.org/).
-[Contentful API](https://www.contentful.com/) is used to get content data.
-For page routing we use [React Router](https://reactrouter.com/)
+# `React typical challenges`
 
-[Link to project](https://elizpn.github.io/react-typical-challenges/)
+On this website you will see solutions to the most common tasks on React. Topics include implementation Redux store for React components, unit tests, React hooks and working with data stractures.
 
-### Features
+Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 
-- Support [Material UI theming system](https://mui.com/customization/theming/);
-- Support [Contentful API](https://www.contentful.com/developers/docs/platforms/);
-- Support [React Router](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
+
+## Technologies and libraries used: 
+
+-  Language - [TypeScript](https://www.typescriptlang.org/)
+-  Server - [Contentful API](https://www.contentful.com/)
+-  Client Framework - [React](https://reactjs.org), [Redux](https://redux.js.org)
+-  Testing - [Jest](https://jestjs.io), [React Testing Library](https://testing-library.com)
+-  Page routing - [React Router](https://reactrouter.com/)
+-  Styles - [Material UI](https://mui.com/) 
+
+## Architecture: 
+<img src="./ReadmeImages/ArchitectureDiagram.png title="Architecture Diagram">
+
+
+
+
+## Implementation specifics:
+Content is created and stored in Contentful CMS.
+
+
+
+## Planned Improvements: 
+- Add chapter on solving algoritmic challenges on JavaScript.
+- Add chapter with description of working styled component's examles in Material UI.
+
 
 ## Development
 
