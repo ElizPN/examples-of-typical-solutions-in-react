@@ -15,7 +15,7 @@ Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 -  Styles - [Material UI](https://mui.com/) 
 
 ## Architecture: 
-<img src="./ReadmeImages/ArchitectureDiagram.png title="Architecture Diagram">
+<img src="./react-typical-challenges/ReadmeImages/ArchitectureDiagram.png title="Architecture Diagram">
 
 
 
