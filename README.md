@@ -14,6 +14,10 @@ Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 -  Page routing - [React Router](https://reactrouter.com/)
 -  Styles - [Material UI](https://mui.com/) 
 
+## Test coverage:
+Unit tests - 90%
+
+
 ## Architecture: 
 <img src="./ReadmeImages/ArchitectureDiagram.png" title="Architecture Diagram">
                                                                                                      
@@ -29,6 +33,7 @@ Content is created and stored in Contentful CMS.
 ## Planned Improvements: 
 - Add chapter on solving algoritmic challenges on JavaScript.
 - Add chapter with description of working styled component's examles in Material UI.
+- Increase test coverage (integration tests and End-to-End tests).
 
 
 ## Development
