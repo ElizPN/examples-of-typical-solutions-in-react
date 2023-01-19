@@ -1,6 +1,6 @@
 # `React typical challenges`
 
-On this website you will see solutions to the most common tasks on React. Topics include implementation Redux store for React components, unit tests, React hooks and working with data stractures.
+On this website you will see solutions to the most common tasks on React. Topics include implementation Redux store for React components, unit tests, React hooks and working with data structures.
 
 Deployed to GitHub Pages: https://elizpn.github.io/react-typical-challenges/#/
 
