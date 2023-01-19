@@ -11,7 +11,7 @@ describe("ChapterRouter,", () => {
   let fakeClientLinks: any;
   beforeEach(() => {
     fakeClientLinks = {
-      getEntries: jest.fn().mockImplementation(() =>
+      getEntries: jest.fn().mockImplementation(() => 
         Promise.resolve({
           items: [
             {
