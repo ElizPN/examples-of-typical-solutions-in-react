@@ -20,9 +20,10 @@ Unit tests - 90%
 
 ## Architecture: 
 <img src="./ReadmeImages/ArchitectureDiagram.png" title="Architecture Diagram">
-                                                                                                     
 
 
+## Demo: 
+     <img src="./ReadmeImages/react.gif" title="Demo">                                                                                                
 
 
 ## Implementation specifics:
