@@ -23,7 +23,8 @@ Unit tests - 90%
 
 
 ## Demo: 
-     <img src="./ReadmeImages/react.gif" title="Demo">                                                                                                
+<img src="./ReadmeImages/react.gif" title="Demo">
+                                 
 
 
 ## Implementation specifics:
