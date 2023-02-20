@@ -17,13 +17,13 @@ type EntryChapterContentful = {
   };
 };
 
-type Link = {
+type LinkType = {
   title: string;
   url: string;
   body: ReactNode;
 };
 
-type ListLinks = Link[];
+type ListLinks = LinkType[];
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
@@ -54,7 +54,7 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
             ) as ReactFragment;
             const [firstLine] = Array.from(body);
 
-            const article: Link = {
+            const article: LinkType = {
               title: elem.fields.title,
               url: elem.fields.slug,
               body: firstLine,

@@ -1,21 +1,14 @@
 import * as React from "react";
 import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "@mui/material/Link";
-import { makeStyles } from "@mui/material/styles";
 
 interface HeaderProps {
   title: string;
 }
 
 export const Header = ({ title }: HeaderProps) => {
-  // const mystyle = {
-  //   padding: "30px",
-  //   backgroundColor: "black",
-  // };
   return (
     <React.Fragment>
       <Toolbar

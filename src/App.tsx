@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import "./general.css";
 import Menu from "./components/Menu";
@@ -18,8 +18,6 @@ var contentful = require("contentful");
 const client = contentful.createClient(contentfulConfig);
 
 const theme = createTheme();
-
-const customData: any = require("../package.json");
 
 export default function App() {
   return (

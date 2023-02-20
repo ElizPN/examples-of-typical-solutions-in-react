@@ -4,8 +4,6 @@ import { connect, ConnectedProps } from "react-redux";
 import { Link } from "react-router-dom";
 import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
 
-var contentful = require("contentful");
-
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 type MenuEntryContentful = {
@@ -32,13 +30,15 @@ const Menu = ({ client, menuList, addMenuItem }: ClientProps) => {
         content_type: "menu",
       })
       .then(function (entries) {
-        entries.items.map((elem: MenuEntryContentful) => {
+        const callBack = (elem: MenuEntryContentful) => {
           const itemMenu: MenuItem = {
             text: elem.fields.textMenu,
             url: elem.fields.slug,
           };
           addMenuItem(itemMenu);
-        });
+          return undefined
+        };
+        entries.items.forEach(callBack);
       });
   }, []);
 
