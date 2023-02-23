@@ -36,11 +36,11 @@ const Menu = ({ client, menuList, addMenuItem }: ClientProps) => {
             url: elem.fields.slug,
           };
           addMenuItem(itemMenu);
-          return undefined
+          return undefined;
         };
         entries.items.forEach(callBack);
       });
-  }, []);
+  }, [client, addMenuItem]);
 
   return (
     <div>
