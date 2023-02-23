@@ -58,7 +58,7 @@ export function PageRouter({ client }: ClientProps) {
           setComponenetNameState(entry.fields.nameComponent);
         });
       });
-  }, [slug]);
+  }, [client]);
 
   return (
     <Box>
