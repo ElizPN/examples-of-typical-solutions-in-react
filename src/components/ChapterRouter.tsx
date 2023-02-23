@@ -30,7 +30,9 @@ type PropsFromRedux = ConnectedProps<typeof connector>;
 
 interface ClientProps extends PropsFromRedux {
   client: {
-    getEntries: (arg: getEntriesParam) => Promise<{ items: [EntryChapterContentful] }>;
+    getEntries: (
+      arg: getEntriesParam
+    ) => Promise<{ items: [EntryChapterContentful] }>;
   };
 }
 
@@ -67,7 +69,7 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
 
         setArraylinksState(arrayList);
       });
-  }, [client]);
+  }, [client, chapter]);
 
   if (!arrayLinksState.length) {
     return <p>Loading...</p>;
