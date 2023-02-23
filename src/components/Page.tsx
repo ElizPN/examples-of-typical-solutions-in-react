@@ -9,11 +9,7 @@ interface PageProps {
   ComponentExample?: React.FC;
 }
 
-export function Page({
-  ComponentExample: ComponentExample,
-  title,
-  body,
-}: PageProps) {
+export function Page({ ComponentExample, title, body }: PageProps) {
   return (
     <Box>
       <h2 data-testid='title'>{title}</h2>
