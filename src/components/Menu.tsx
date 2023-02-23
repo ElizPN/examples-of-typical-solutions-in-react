@@ -12,8 +12,10 @@ type MenuEntryContentful = {
     slug: string;
   };
 };
- interface getEntriesParam {
+
+ export interface getEntriesParam {
    content_type: string;
+   "fields.chapter"?: string;
  }
 
 interface ClientProps extends PropsFromRedux {

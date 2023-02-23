@@ -8,6 +8,7 @@ import { Document } from "@contentful/rich-text-types";
 import Button from "@mui/material/Button";
 import { connect, ConnectedProps } from "react-redux";
 import { mapDispatch, mapState, MenuItem } from "../app/map_state_dispatch";
+import { getEntriesParam } from "./Menu";
 
 type EntryChapterContentful = {
   fields: {
@@ -29,7 +30,7 @@ type PropsFromRedux = ConnectedProps<typeof connector>;
 
 interface ClientProps extends PropsFromRedux {
   client: {
-    getEntries: ({}) => Promise<{ items: [EntryChapterContentful] }>;
+    getEntries: (arg: getEntriesParam) => Promise<{ items: [EntryChapterContentful] }>;
   };
 }
 
@@ -66,7 +67,7 @@ export const ChapterRouter = ({ client, menuList }: ClientProps) => {
 
         setArraylinksState(arrayList);
       });
-  }, [chapter]);
+  }, [client]);
 
   if (!arrayLinksState.length) {
     return <p>Loading...</p>;
