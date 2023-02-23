@@ -12,10 +12,13 @@ type MenuEntryContentful = {
     slug: string;
   };
 };
+ interface getEntriesParam {
+   content_type: string;
+ }
 
 interface ClientProps extends PropsFromRedux {
   client: {
-    getEntries: ({}) => Promise<{
+    getEntries: (arg: getEntriesParam) => Promise<{
       items: [MenuEntryContentful];
     }>;
   };
