@@ -1,5 +1,4 @@
 import { AddElementFromInput } from "./AddElementFromInput";
-import { ArrayList } from "./ArrayList";
 import { BindingInputsToArray } from "./BindingInputsToArray";
 import { ChangeElemInObjectsArray } from "./ChangeElemInObjectsArray";
 import { Counter } from "./Counter";
